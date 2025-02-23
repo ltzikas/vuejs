@@ -19,7 +19,7 @@ const app = Vue.createApp({
         changeTitle(title){
                 this.title = title
         },
-        toogleShowBooks(){
+        toggleShowBooks(){
             this.showBooks = !this.showBooks
         },
         handleEvent(e, data){
@@ -31,6 +31,15 @@ const app = Vue.createApp({
         handleMousemove(e){
             this.x = e.offsetX
             this.y = e.offsetY
+        },
+        toggleFav(book){
+            console.log(book)
+            book.isFav = !book.isFav
+        }
+    },
+    computed: {
+        filteredBooks(){
+            return this.books.filter((book) => book.isFav)
         }
     }
 })

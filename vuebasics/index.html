@@ -45,8 +45,17 @@
          <a :href="url">best website ever</a>
         <div v-if="showBooks">
             {{ title }} - {{ author }} - {{ age }}
+            <h1>All the books</h1>
             <ul>
-                <li v-for="book in books" :class="{ fav: book.isFav }">    
+                <li v-for="book in books" :class="{ fav: book.isFav }" @click="toggleFav(book)">    
+                    <img :src="book.img" :alt="book.title">
+                    <h3>{{ book.title }}</h3>
+                    <p>{{ book.author }}</p>
+                </li>
+            </ul>
+            <h1>Filtered Books (Only FAVs)</h1>
+            <ul>
+                <li v-for="book in filteredBooks" :class="{ fav: book.isFav }" @click="toggleFav(book)">    
                     <img :src="book.img" :alt="book.title">
                     <h3>{{ book.title }}</h3>
                     <p>{{ book.author }}</p>
@@ -57,7 +66,7 @@
         <div v-if="showBooks"><button v-on:click="age++">Increase Age</button></div>
         <div v-if="showBooks"><button v-on:click="age--">Decrease Age</button></div>
         <div>
-            <button @click="toogleShowBooks()">
+            <button @click="toggleShowBooks()">
                 <span v-if="showBooks">Hide Books</span>
                 <span v-else>Show Books</span>
             </button>
