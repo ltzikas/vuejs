@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Desarrollo Web",
+    "description": "Aplicaciones web modernas, rápidas y responsivas usando Vue, React o Node.js."
+  },
+  {
+    "id": 2,
+    "title": "Consultoría Técnica",
+    "description": "Asesoramiento en arquitectura, buenas prácticas y optimización de proyectos."
+  },
+  {
+    "id": 3,
+    "title": "Integración de APIs",
+    "description": "Conexión de sistemas y servicios externos mediante APIs REST y GraphQL."
+  }
+]
