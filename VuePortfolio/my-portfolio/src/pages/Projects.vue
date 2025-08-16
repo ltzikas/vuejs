@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2>Proyectos</h2>
+  <section>
+    <h1>{{ $t('projects') }}</h1>
     <ul>
       <li v-for="project in projects" :key="project.id">
         <h3>{{ project.name }}</h3>
@@ -8,7 +8,7 @@
         <p>Tecnologías: {{ project.tech.join(', ') }}</p>        
       </li>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script lang="ts" setup>

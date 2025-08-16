@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <h1>Bienvenido a mi Portfolio</h1>
-    <!-- Aquí irá la presentación principal -->
-  </div>
+  <section>
+    <h1>{{ $t('home') }}</h1>
+    <!-- Home content -->
+  </section>
 </template>
 
 <script lang="ts" setup>

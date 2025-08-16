@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <h2>Sobre mí</h2>
-    <!-- Aquí irá tu información personal y profesional -->
-  </div>
+  <section>
+    <h1>{{ $t('about') }}</h1>
+    <!-- About content -->
+  </section>
 </template>
 
 <script lang="ts" setup>

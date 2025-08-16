@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <h2>Contacto</h2>
-    <!-- Aquí irá el formulario de contacto -->
-  </div>
+  <section>
+    <h1>{{ $t('contact') }}</h1>
+    <!-- Contact content -->
+  </section>
 </template>
 
 <script lang="ts" setup>
