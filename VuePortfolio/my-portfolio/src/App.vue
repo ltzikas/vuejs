@@ -1,8 +1,15 @@
 <template>
-  <div :class="['min-h-screen font-sans flex flex-col', theme.isDark ? 'bg-bodydrk' : 'bg-gray-100']">
+  <div :class="['min-h-screen font-sans flex flex-col', theme.isDark ? 'bg-background-dark' : 'bg-background-light']">
     <NavBar />
-    <main :class="['flex-1 max-w-3xl mx-auto my-8 p-6 rounded-lg shadow', theme.isDark ? 'bg-darkbg text-gray-100' : 'bg-white text-gray-900']">
-      <router-view />
+    <main>
+      <HeroSection id="hero" />
+      <AboutSection id="about" />
+      <SkillsSection id="skills" />
+      <ExperienceSection id="experience" />
+      <ProjectsSection id="projects" />
+      <ServicesSection id="services" />
+      <EducationSection id="education" />
+      <ContactSection id="contact" />
     </main>
     <FooterBar />
   </div>
@@ -12,8 +19,14 @@
 import { useThemeStore } from './stores/theme'
 import NavBar from './components/NavBar.vue'
 import FooterBar from './components/FooterBar.vue'
-import ThemeToggle from './components/ThemeToggle.vue'
-import LanguageSelector from './components/LanguageSelector.vue'
+import HeroSection from './components/HeroSection.vue'
+import AboutSection from './pages/About.vue'
+import SkillsSection from './pages/Skills.vue'
+import ExperienceSection from './pages/Experience.vue'
+import ProjectsSection from './pages/Projects.vue'
+import ServicesSection from './pages/Services.vue'
+import EducationSection from './pages/Education.vue'
+import ContactSection from './pages/Contact.vue'
 
 const theme = useThemeStore()
 </script>

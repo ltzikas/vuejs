@@ -1,7 +1,6 @@
 import './assets/tailwind.css'
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
 import { createPinia } from 'pinia'
 
 // Importa la función para crear i18n y los archivos de mensajes de idioma
@@ -27,6 +26,5 @@ const i18n = createI18n({
 const app = createApp(App)
 app.use(createPinia())
 app.use(i18n)
-app.use(router)
 
 app.mount('#app')

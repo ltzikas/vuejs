@@ -1,10 +1,8 @@
 <template>
-  <section>
-    <h1>{{ $t('home') }}</h1>
-    <!-- Home content -->
-  </section>
+  <HeroSection />
 </template>
 
 <script lang="ts" setup>
+import HeroSection from '../components/HeroSection.vue'
 // ...por ahora vacío...
 </script>

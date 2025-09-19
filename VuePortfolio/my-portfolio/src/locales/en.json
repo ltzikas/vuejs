@@ -3,5 +3,12 @@
   "about": "About",
   "services": "Services",
   "projects": "Projects",
-  "contact": "Contact"
+  "contact": "Contact",
+  "hero": {
+    "title": "Hi, I'm Lucio Tzikas",
+    "subtitle": "Freelance Full Stack Developer",
+    "description": "I build modern, scalable, and visually stunning web applications for clients worldwide. Let's work together to bring your ideas to life!",
+    "ctaContact": "Contact Me",
+    "ctaProjects": "View Projects"
+  }
 }

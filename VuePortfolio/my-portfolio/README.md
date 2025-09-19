@@ -4,6 +4,12 @@ Personal portfolio developed with Vue 3 + Vite.
 
 ---
 
+## About This Project
+
+This portfolio is designed as my professional presentation and main tool to promote myself as a freelance developer. The goal is to create a visually attractive, modern, and highly usable site that showcases my skills, experience, and services to potential clients. Every section and feature is focused on communicating my value as a professional and making it easy for clients to contact or hire me.
+
+---
+
 ## Technologies Used
 
 - **Vue 3** (Composition API, `<script setup>`)
@@ -91,14 +97,35 @@ The portfolio is organized into the following sections for a clear and professio
 
 ---
 
+## Color Palette
+
+The portfolio uses a custom color palette for both light and dark themes to reinforce personal branding and ensure a modern, professional look.
+
+| Role         | Light Theme                | Dark Theme                  |
+|--------------|---------------------------|-----------------------------|
+| Background   | #F8FAFC (slate-50)        | #0F172A (slate-900)         |
+| Surface      | #FFFFFF (white)           | #1E293B (slate-800)         |
+| Primary      | #2563EB (blue-600)        | #60A5FA (blue-400)          |
+| Accent       | #F59E42 (orange-400)      | #FBBF24 (amber-400)         |
+| Text         | #1E293B (slate-800)       | #F1F5F9 (slate-100)         |
+| Muted Text   | #64748B (slate-400)       | #94A3B8 (slate-400)         |
+| Border       | #E2E8F0 (slate-200)       | #334155 (slate-700)         |
+
+> You can adjust these colors to better fit your personal brand.
+
+---
+
 ## Next Steps
 
-- Update NavBar and routing to reflect the new sections.
-- Implement and populate each section: About, Skills, Experience, Projects, Services, Education, Contact.
-- Integrate LinkedIn and GitHub links.
-- Improve contact section (form and/or meeting scheduling).
-- Add visual details (avatar, banner, etc).
-- (Optional) Integrate a ChatGPT chatbot.
+- [ ] **Update NavBar and routes** to reflect all key portfolio sections.
+- [ ] **Implement and complete each section**: About, Skills, Experience, Projects, Services, Education, Contact.
+- [ ] **Optimize the Services section** to clearly highlight the freelance solutions I offer.
+- [ ] **Add LinkedIn and GitHub links** in a visible and attractive way.
+- [ ] **Improve the Contact section**: functional form, direct links, and/or meeting scheduling integration.
+- [ ] **Incorporate visual details**: professional avatar, custom banner, and graphic elements to reinforce my personal brand.
+- [ ] **Refine texts and content** to convey trust, professionalism, and client focus.
+- [ ] (Optional) **Integrate a chatbot (ChatGPT)** for quick inquiries from potential clients.
+- [ ] (Optional) **Add testimonials or references** from previous clients.
 
 ---
 
@@ -117,5 +144,4 @@ npm run dev
 - Consistent use of ES Modules and service-based architecture is recommended.
 - **For Vue 3 projects, use the [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) extension in VSCode instead of Vetur.**
 
----
 ---

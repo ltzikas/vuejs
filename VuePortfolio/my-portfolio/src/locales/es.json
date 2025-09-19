@@ -3,5 +3,12 @@
   "about": "Sobre mí",
   "services": "Servicios",
   "projects": "Proyectos",
-  "contact": "Contacto"
+  "contact": "Contacto",
+  "hero": {
+    "title": "Impulso el crecimiento de tu organización desde IT",
+    "subtitle": "Ingeniero en Informática · Application/Product Manager. 15+ años de experiencia gestionando portfolios de aplicaciones en Latinoamérica y Norteamérica, con tecnologías Angular + .NET Core, SQL Server y Azure Cloud.",
+    "description": "Combino visión estratégica y experiencia técnica para transformar necesidades de negocio en soluciones digitales concretas. He liderado la evolución y modernización de más de 18 aplicaciones, gestionando equipos multidisciplinarios, presupuestos y proveedores, siempre con foco en optimización de costos, seguridad y alineación con los objetivos de la organización. Puedo aportar valor tanto en la definición de la estrategia tecnológica, como en la ejecución operativa, asegurando que IT no sea solo un soporte, sino un motor de innovación y crecimiento para la empresa.",
+    "ctaContact": "Contáctame",
+    "ctaProjects": "Ver Proyectos"
+  }
 }

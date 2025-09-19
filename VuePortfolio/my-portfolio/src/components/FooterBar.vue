@@ -1,5 +1,5 @@
 <template>
-  <footer :class="['text-center py-4 mt-8 text-sm', theme.isDark ? 'bg-darkbg text-gray-400' : 'bg-primary text-white']">
+  <footer :class="['text-center py-4 mt-8 text-sm', theme.isDark ? 'bg-background-dark text-white' : 'bg-background-light text-gray-400']">
     © {{ year }} Lucio Tzikas · Portfolio
   </footer>
 </template>
