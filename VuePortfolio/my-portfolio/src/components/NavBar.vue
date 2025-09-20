@@ -1,11 +1,12 @@
 <template>
   <nav
     :class="[
-      'py-1 flex justify-between items-center px-4 shadow-md',
+      'fixed top-0 left-0 w-full z-50 py-1 flex justify-between items-center px-4 shadow-md transition-all duration-300',
       theme.isDark ? 'bg-background-dark' : 'bg-background-light',
+      scrolled ? 'bg-opacity-60 backdrop-blur-md' : 'bg-opacity-90',
     ]"
   >
-    <a href="#hero" class="hidden md:flex items-center gap-3 group">
+    <a href="/" class="hidden md:flex items-center gap-3 group">
       <img
         src="https://ui-avatars.com/api/?name=Lucio+Tzikas&background=1e40af&color=fff&size=40"
         alt="Avatar"
@@ -62,7 +63,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from "vue";
+import { computed, ref, onMounted, onUnmounted } from "vue";
 import ThemeToggle from "./ThemeToggle.vue";
 import LanguageSelector from "./LanguageSelector.vue";
 import SocialMedia from "./SocialMedia.vue";
@@ -72,6 +73,19 @@ import HamburgerIcon from "./HamburgerIcon.vue";
 const theme = useThemeStore();
 
 const menuOpen = ref(false);
+
+const scrolled = ref(false);
+
+const handleScroll = () => {
+  scrolled.value = window.scrollY > 10;
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 
 const links = [
   { to: "#about", label: "about" },
