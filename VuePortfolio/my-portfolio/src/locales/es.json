@@ -25,5 +25,16 @@
       "projects": "Proyectos entregados",
       "clients": "Clientes satisfechos"
     }
+  },
+  "approachSection": {
+    "title": "Cómo trabajo",
+    "subtitle": "Proceso claro, entregas frecuentes y foco en resultados.",
+    "steps": [
+      { "title": "Descubrir", "desc": "Entiendo el problema, usuarios y objetivos. Definimos alcance y éxito." },
+      { "title": "Construir", "desc": "Iteraciones cortas con feedback. Código claro, tests y performance." },
+      { "title": "Entregar", "desc": "Deploy y medición. Documentación y handoff sin fricción." }
+    ],
+    "valuesTitle": "Valores",
+    "values": ["Comunicación clara", "Entregas cortas", "Calidad y pruebas", "Transparencia", "Escalabilidad"]
   }
 }

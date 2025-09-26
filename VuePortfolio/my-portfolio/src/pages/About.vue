@@ -1,10 +1,7 @@
 <template>
-  <section>
-    <h1>{{ $t('about') }}</h1>
-    <!-- About content -->
-  </section>
+  <AboutSection />
 </template>
 
-<script lang="ts" setup>
-// ...por ahora vacío...
+<script setup lang="ts">
+import AboutSection from '../components/AboutSection.vue'
 </script>

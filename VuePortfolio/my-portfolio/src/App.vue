@@ -2,13 +2,13 @@
   <div
     :class="[
       'min-h-screen font-sans flex flex-col',
-      'bg-background-dark'
+      'bg-background-light dark:bg-background-dark'
     ]"
   >
     <NavBar />
     <main>
       <HeroSection id="hero" />
-      <AboutSection id="about" />
+      <About id="about" />
       <SkillsSection id="skills" />
       <ExperienceSection id="experience" />
       <ProjectsSection id="projects" />
@@ -24,7 +24,7 @@
 import NavBar from "./components/NavBar.vue";
 import FooterBar from "./components/FooterBar.vue";
 import HeroSection from "./components/HeroSection.vue";
-import AboutSection from "./pages/About.vue";
+import About from "./pages/About.vue";
 import SkillsSection from "./pages/Skills.vue";
 import ExperienceSection from "./pages/Experience.vue";
 import ProjectsSection from "./pages/Projects.vue";

@@ -25,5 +25,16 @@
       "projects": "Projects delivered",
       "clients": "Happy clients"
     }
+  },
+  "approachSection": {
+    "title": "How I work",
+    "subtitle": "Clear process, frequent delivery, outcome focus.",
+    "steps": [
+      { "title": "Discover", "desc": "Understand problem, users and goals. Define scope and success." },
+      { "title": "Build", "desc": "Short iterations with feedback. Clean code, tests and performance." },
+      { "title": "Deliver", "desc": "Deploy and measure. Documentation and smooth handoff." }
+    ],
+    "valuesTitle": "Values",
+    "values": ["Clear communication", "Short iterations", "Quality and tests", "Transparency", "Scalability"]
   }
 }
