@@ -5,10 +5,25 @@
   "projects": "Proyectos",
   "contact": "Contacto",
   "hero": {
-    "title": "Impulso el crecimiento de tu organización desde IT",
-    "subtitle": "Ingeniero en Informática · Application/Product Manager. 15+ años de experiencia gestionando portfolios de aplicaciones en Latinoamérica y Norteamérica, con tecnologías Angular + .NET Core, SQL Server y Azure Cloud.",
-    "description": "Combino visión estratégica y experiencia técnica para transformar necesidades de negocio en soluciones digitales concretas. He liderado la evolución y modernización de más de 18 aplicaciones, gestionando equipos multidisciplinarios, presupuestos y proveedores, siempre con foco en optimización de costos, seguridad y alineación con los objetivos de la organización. Puedo aportar valor tanto en la definición de la estrategia tecnológica, como en la ejecución operativa, asegurando que IT no sea solo un soporte, sino un motor de innovación y crecimiento para la empresa.",
-    "ctaContact": "Contáctame",
-    "ctaProjects": "Ver Proyectos"
+    "available": "Disponible para nuevos proyectos",
+    "eyebrow": "Ingeniero de software • Frontend",
+    "titleStrong": "Diseño y desarrollo",
+    "titleRest": "experiencias web modernas",
+    "typed": [
+      "Frontend con Vue 3 + TypeScript",
+      "UI/UX • Accesibilidad • Performance",
+      "APIs limpias y mantenibles"
+    ],
+    "description": "Combino diseño y código para crear interfaces rápidas, accesibles y escalables. Trabajo con equipos y clientes para llevar ideas a producción con calidad.",
+    "ctaPrimary": "Ver proyectos",
+    "ctaSecondary": "Contactar",
+    "ctaResume": "Ver CV",
+    "availability": "Disponible ahora",
+    "photoAlt": "Foto de perfil de Lucio Tzikas",
+    "stats": {
+      "years": "Años de experiencia",
+      "projects": "Proyectos entregados",
+      "clients": "Clientes satisfechos"
+    }
   }
 }

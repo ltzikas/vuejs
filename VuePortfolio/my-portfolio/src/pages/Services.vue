@@ -3,8 +3,8 @@
     <h1>{{ $t('services') }}</h1>
     <ul v-if="services.length">
       <li v-for="service in services" :key="service.id">
-        <h3>{{ service.title[language.locale] }}</h3>
-        <p>{{ service.description[language.locale] }}</p>
+        <h2>{{ service.title[$i18n.locale] }}</h2>
+        <p>{{ service.description[$i18n.locale] }}</p>
       </li>
     </ul>
     <p v-else>Cargando servicios...</p>
@@ -13,9 +13,6 @@
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
-import { useLanguageStore } from '../stores/language'
-
-const language = useLanguageStore()
 
 type Service = {
   id: number

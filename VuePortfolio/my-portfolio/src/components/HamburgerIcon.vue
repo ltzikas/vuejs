@@ -1,7 +1,7 @@
 <template>
   <button
     class="hamburger md:hidden"
-    :class="{ dark: theme.isDark, open: isOpen }"
+    :class="{open: isOpen }"
     @click="$emit('toggle')"
   >
     <span></span>
@@ -12,9 +12,6 @@
 
 <script setup>
 import { defineProps } from "vue";
-import { useThemeStore } from "../stores/theme";
-
-const theme = useThemeStore();
 
 const props = defineProps({
   isOpen: {

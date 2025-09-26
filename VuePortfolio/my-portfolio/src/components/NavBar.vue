@@ -2,7 +2,7 @@
   <nav
     :class="[
       'fixed top-0 left-0 w-full z-50 py-1 flex justify-between items-center px-4 shadow-md transition-all duration-300',
-      theme.isDark ? 'bg-background-dark' : 'bg-background-light',
+      'bg-background-dark',
       scrolled ? 'bg-opacity-60 backdrop-blur-md' : 'bg-opacity-90',
     ]"
   >
@@ -67,10 +67,7 @@ import { computed, ref, onMounted, onUnmounted } from "vue";
 import ThemeToggle from "./ThemeToggle.vue";
 import LanguageSelector from "./LanguageSelector.vue";
 import SocialMedia from "./SocialMedia.vue";
-import { useThemeStore } from "../stores/theme";
 import HamburgerIcon from "./HamburgerIcon.vue";
-
-const theme = useThemeStore();
 
 const menuOpen = ref(false);
 
@@ -100,9 +97,7 @@ const links = [
 const linkClass = computed(() =>
   [
     "font-medium px-3 py-2 rounded transition",
-    theme.isDark
-      ? "text-white hover:bg-primary-hover-dark"
-      : "text-gray-900 hover:bg-primary-hover-light hover:text-white",
+    "text-white hover:bg-primary-hover-dark"
   ].join(" ")
 );
 </script>

@@ -1,25 +1,25 @@
 <template>
   <button
-    @click="theme.toggleTheme"
+    @click="toggleTheme"
     class="relative w-14 h-8 rounded-full transition-colors duration-300 focus:outline-none"
-    :class="theme.isDark ? 'bg-surface-dark' : 'bg-gray-300'"
+    :class="isDark ? 'bg-surface-dark' : 'bg-gray-300'"
     :aria-label="
-      theme.isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'
+      isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'
     "
   >
     <span
       class="absolute inset-0 rounded-full transition-colors duration-300 pointer-events-none"
-      :class="theme.isDark ? 'bg-surface-dark' : 'bg-gray-300'"
+      :class="isDark ? 'bg-surface-dark' : 'bg-gray-300'"
     ></span>
     <span
       class="absolute top-1 left-1 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110 hover:ring-2 hover:ring-accent/60"
       :class="
-        theme.isDark
+        isDark
           ? 'translate-x-6 bg-blue-950 text-white'
           : 'translate-x-0 bg-white text-yellow-500'
       "
     >
-      <span v-if="theme.isDark">
+      <span v-if="isDark">
         <!-- Luna -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -52,6 +52,17 @@
 </template>
 
 <script lang="ts" setup>
-import { useThemeStore } from "../stores/theme";
-const theme = useThemeStore();
+import { ref, onMounted } from 'vue'
+
+const isDark = ref(false)
+
+onMounted(() => {
+  isDark.value = document.documentElement.classList.contains('dark')
+})
+
+function toggleTheme() {
+  isDark.value = !isDark.value
+  document.documentElement.classList.toggle('dark', isDark.value)
+  localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+}
 </script>

@@ -2,7 +2,7 @@
   <div
     :class="[
       'min-h-screen font-sans flex flex-col',
-      theme.isDark ? 'bg-background-dark' : 'bg-background-light',
+      'bg-background-dark'
     ]"
   >
     <NavBar />
@@ -21,7 +21,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useThemeStore } from "./stores/theme";
 import NavBar from "./components/NavBar.vue";
 import FooterBar from "./components/FooterBar.vue";
 import HeroSection from "./components/HeroSection.vue";
@@ -32,8 +31,6 @@ import ProjectsSection from "./pages/Projects.vue";
 import ServicesSection from "./pages/Services.vue";
 import EducationSection from "./pages/Education.vue";
 import ContactSection from "./pages/Contact.vue";
-
-const theme = useThemeStore();
 </script>
 
 <style>
