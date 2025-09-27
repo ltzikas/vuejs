@@ -36,5 +36,13 @@
     ],
     "valuesTitle": "Values",
     "values": ["Clear communication", "Short iterations", "Quality and tests", "Transparency", "Scalability"]
+  },
+  "skills": {
+    "title": "Technologies & Tools",
+    "subtitle": "These are the main technologies and tools I use in my projects."
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "Academic background and relevant courses."
   }
 }

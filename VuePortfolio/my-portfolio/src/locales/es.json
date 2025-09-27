@@ -36,5 +36,13 @@
     ],
     "valuesTitle": "Valores",
     "values": ["Comunicación clara", "Entregas cortas", "Calidad y pruebas", "Transparencia", "Escalabilidad"]
+  },
+  "skills": {
+    "title": "Tecnologías y herramientas",
+    "subtitle": "Estas son las principales tecnologías y herramientas que uso en mis proyectos."
+  },
+    "education": {
+    "title": "Educación",
+    "subtitle": "Formación académica y cursos relevantes."
   }
 }

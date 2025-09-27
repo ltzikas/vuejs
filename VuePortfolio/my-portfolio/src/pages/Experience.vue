@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <h1>{{ $t('experience') }}</h1>
-    <!-- Experience content -->
-  </section>
+  <ExperienceSection />
 </template>
+<script lang="ts" setup>
+import ExperienceSection from "../components/ExperienceSection.vue";
+</script>

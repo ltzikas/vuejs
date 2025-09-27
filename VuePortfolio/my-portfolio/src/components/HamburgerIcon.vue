@@ -4,9 +4,9 @@
     :class="{open: isOpen }"
     @click="$emit('toggle')"
   >
-    <span></span>
-    <span></span>
-    <span></span>
+    <span class="bg-slate-900 dark:bg-white" ></span>
+    <span class="bg-slate-900 dark:bg-white" ></span>
+    <span class="bg-slate-900 dark:bg-white" ></span>
   </button>
 </template>
 

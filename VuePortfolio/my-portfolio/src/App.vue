@@ -23,7 +23,7 @@
 <script lang="ts" setup>
 import NavBar from "./components/NavBar.vue";
 import FooterBar from "./components/FooterBar.vue";
-import HeroSection from "./components/HeroSection.vue";
+import HeroSection from "./pages/Home.vue";
 import About from "./pages/About.vue";
 import SkillsSection from "./pages/Skills.vue";
 import ExperienceSection from "./pages/Experience.vue";

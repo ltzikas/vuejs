@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <h1>{{ $t('education') }}</h1>
-    <!-- Education content -->
-  </section>
+  <EducationSection />
 </template>
+<script lang="ts" setup>
+import EducationSection from '../components/EducationSection.vue';
+</script>

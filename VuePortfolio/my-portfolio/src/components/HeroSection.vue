@@ -76,12 +76,6 @@
               </svg>
             </a>
           </div>
-
-          <!-- Social -->
-          <div class="mt-6 flex justify-center md:justify-start">
-            <SocialMedia />
-          </div>
-
           <!-- Stats -->
           <dl class="mt-10 grid grid-cols-3 gap-4 max-w-md mx-auto md:mx-0">
             <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5">
