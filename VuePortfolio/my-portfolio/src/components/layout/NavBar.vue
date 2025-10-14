@@ -7,13 +7,11 @@
         : 'bg-white dark:bg-slate-900',
     ]"
   >
-    <a href="/" class="hidden md:flex items-center gap-3 group">
-      <img
-        src="https://ui-avatars.com/api/?name=Lucio+Tzikas&background=1e40af&color=fff&size=40"
-        alt="Avatar"
-        class="rounded-full w-10 h-10 border-2 border-accent shadow group-hover:scale-105 transition"
-      />
-    </a>
+    <!-- Logo -->
+     <div class="hidden md:block">
+      <BrandLogo />
+     </div>
+    
     <ul class="hidden md:flex justify-center gap-8 list-none m-0 p-0">
       <li v-for="link in links" :key="link.to">
         <a :href="link.to" class="block text-lg text-slate-700 dark:text-slate-300 px-3 py-2 rounded hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 transition-colors">{{
@@ -26,7 +24,7 @@
       @toggle="menuOpen = !menuOpen"
       aria-label="Abrir menú"
     />
-    <div class="flex items-center gap-5">
+    <div class="flex items-center gap-3">
       <SocialMedia />
       <LanguageSelector />
       <ThemeToggle />
@@ -69,6 +67,7 @@ import ThemeToggle from "@/components/ui/ThemeToggle.vue";
 import LanguageSelector from "@/components/ui/LanguageSelector.vue";
 import SocialMedia from "@/components/ui/SocialMedia.vue";
 import HamburgerIcon from "@/components/ui/HamburgerIcon.vue";
+import BrandLogo from "../ui/BrandLogo.vue";
 
 const menuOpen = ref(false);
 
