@@ -1,5 +1,5 @@
 <template>
-  <section id="services" class="py-20 bg-white dark:bg-slate-900">
+  <section id="services" :class="[backgrounds.services, sectionClasses]">
     <div class="mx-auto max-w-5xl px-6">
       <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">{{ $t('services.title') }}</h2>
       <p class="text-slate-700 dark:text-slate-300 mb-8">{{ $t('services.subtitle') }}</p>
@@ -15,6 +15,9 @@
 </template>
 
 <script setup lang="ts">
+import { useSectionBackground } from '@/composables/useSectionBackground'
+
+const { backgrounds, sectionClasses } = useSectionBackground()
 const services = [
   { icon: '💻', title: 'Desarrollo Frontend', desc: 'Interfaces modernas y responsivas.' },
   { icon: '🧩', title: 'APIs Backend', desc: 'APIs robustas y seguras.' },

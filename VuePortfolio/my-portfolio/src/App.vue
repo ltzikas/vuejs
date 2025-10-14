@@ -7,30 +7,30 @@
   >
     <NavBar />
     <main>
-      <HeroSection id="hero" />
-      <About id="about" />
-      <SkillsSection id="skills" />
-      <ExperienceSection id="experience" />
-      <ProjectsSection id="projects" />
-      <ServicesSection id="services" />
-      <EducationSection id="education" />
-      <ContactSection id="contact" />
+      <HeroSection />
+      <AboutSection />
+      <SkillsSection />
+      <ExperienceSection />
+      <ProjectsSection />
+      <ServicesSection />
+      <EducationSection />
+      <ContactSection />
     </main>
     <FooterBar />
   </div>
 </template>
 
-<script lang="ts" setup>
-import NavBar from "./components/NavBar.vue";
-import FooterBar from "./components/FooterBar.vue";
-import HeroSection from "./pages/Home.vue";
-import About from "./pages/About.vue";
-import SkillsSection from "./pages/Skills.vue";
-import ExperienceSection from "./pages/Experience.vue";
-import ProjectsSection from "./pages/Projects.vue";
-import ServicesSection from "./pages/Services.vue";
-import EducationSection from "./pages/Education.vue";
-import ContactSection from "./pages/Contact.vue";
+<script setup lang="ts">
+import NavBar from '@/components/layout/NavBar.vue'
+import HeroSection from '@/components/sections/HeroSection.vue'
+import AboutSection from '@/components/sections/AboutSection.vue'
+import SkillsSection from '@/components/sections/SkillsSection.vue'
+import ExperienceSection from '@/components/sections/ExperienceSection.vue'
+import ProjectsSection from '@/components/sections/ProjectsSection.vue'
+import ServicesSection from '@/components/sections/ServicesSection.vue'
+import EducationSection from '@/components/sections/EducationSection.vue'
+import ContactSection from '@/components/sections/ContactSection.vue'
+import FooterBar from '@/components/layout/FooterBar.vue'
 </script>
 
 <style>

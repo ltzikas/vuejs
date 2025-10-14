@@ -1,5 +1,5 @@
 <template>
-  <section id="projects" class="py-20 bg-gradient-to-br from-indigo-50 via-white to-cyan-100 dark:from-slate-900 dark:via-slate-800 dark:to-cyan-900">
+  <section id="projects" :class="[backgrounds.projects, sectionClasses]">
     <div class="mx-auto max-w-7xl px-6">
       <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">{{ $t('projects.title') }}</h2>
       <p class="text-slate-700 dark:text-slate-300 mb-8">{{ $t('projects.subtitle') }}</p>
@@ -22,11 +22,14 @@
 </template>
 
 <script setup lang="ts">
+import { useSectionBackground } from '@/composables/useSectionBackground'
+
+const { backgrounds, sectionClasses } = useSectionBackground()
 const projects = [
   {
     title: 'Portfolio Vue',
     desc: 'Landing personal con Vue 3 y Tailwind.',
-    image: '../assets/vue.svg',
+    image: '@/assets/vue.svg',
     techs: ['Vue', 'Tailwind', 'TypeScript'],
     demo: '#',
     repo: '#'

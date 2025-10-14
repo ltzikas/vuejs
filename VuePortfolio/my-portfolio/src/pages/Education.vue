@@ -2,5 +2,5 @@
   <EducationSection />
 </template>
 <script lang="ts" setup>
-import EducationSection from '../components/EducationSection.vue';
+import EducationSection from '@/components/sections/EducationSection.vue'
 </script>

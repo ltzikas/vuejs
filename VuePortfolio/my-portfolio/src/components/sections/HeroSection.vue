@@ -1,5 +1,5 @@
 <template>
-  <section id="hero" class="relative overflow-hidden bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+  <section id="hero" :class="[backgrounds.hero, 'relative overflow-hidden min-h-screen flex items-center']">
     <!-- Fondos decorativos -->
     <div aria-hidden="true" class="pointer-events-none absolute inset-0">
       <div class="absolute left-1/2 top-[-10%] h-[60vw] w-[60vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(56,189,248,0.08)_0%,_rgba(56,189,248,0)_60%)] dark:bg-[radial-gradient(circle,_rgba(56,189,248,0.12)_0%,_rgba(56,189,248,0)_60%)]"></div>
@@ -121,12 +121,14 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import SocialMedia from './SocialMedia.vue'
+import { useSectionBackground } from '@/composables/useSectionBackground'
 
 // Imagen de perfil
-const photoUrl = new URL('../assets/Lucio.JPG', import.meta.url).href
+const photoUrl = new URL('@/assets/Lucio.JPG', import.meta.url).href
 // CV (coloca un PDF en /src/assets/cv.pdf o ajusta la ruta)
-const resumeUrl = new URL('../assets/cv.pdf', import.meta.url).href
+const resumeUrl = new URL('@/assets/cv.pdf', import.meta.url).href
+// Fondo decorativo
+const { backgrounds } = useSectionBackground()
 
 // Typed effect con i18n
 const { t, locale } = useI18n()

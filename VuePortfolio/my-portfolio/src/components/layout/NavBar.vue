@@ -2,8 +2,9 @@
   <nav
     :class="[
       'fixed top-0 left-0 w-full z-50 py-1 flex justify-between items-center px-4 shadow-md transition-all duration-300',
-      'bg-background-dark',
-      scrolled ? 'bg-opacity-60 backdrop-blur-md' : 'bg-opacity-90',
+      scrolled 
+        ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md' 
+        : 'bg-white dark:bg-slate-900',
     ]"
   >
     <a href="/" class="hidden md:flex items-center gap-3 group">
@@ -15,7 +16,7 @@
     </a>
     <ul class="hidden md:flex justify-center gap-8 list-none m-0 p-0">
       <li v-for="link in links" :key="link.to">
-        <a :href="link.to" class="block text-lg text-slate-900 dark:text-slate-100 px-3 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">{{
+        <a :href="link.to" class="block text-lg text-slate-700 dark:text-slate-300 px-3 py-2 rounded hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 transition-colors">{{
           $t(link.label)
         }}</a>
       </li>
@@ -51,7 +52,7 @@
         <li v-for="link in links" :key="link.to">
           <a
             :href="link.to"
-            class="block text-lg text-slate-900 dark:text-slate-100 px-3 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            class="block text-lg text-slate-700 dark:text-slate-300 px-3 py-2 rounded hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 transition-colors"
             @click="menuOpen = false"
           >
             {{ $t(link.label) }}
@@ -63,11 +64,11 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref, onMounted, onUnmounted } from "vue";
-import ThemeToggle from "./ThemeToggle.vue";
-import LanguageSelector from "./LanguageSelector.vue";
-import SocialMedia from "./SocialMedia.vue";
-import HamburgerIcon from "./HamburgerIcon.vue";
+import { ref, onMounted, onUnmounted } from "vue";
+import ThemeToggle from "@/components/ui/ThemeToggle.vue";
+import LanguageSelector from "@/components/ui/LanguageSelector.vue";
+import SocialMedia from "@/components/ui/SocialMedia.vue";
+import HamburgerIcon from "@/components/ui/HamburgerIcon.vue";
 
 const menuOpen = ref(false);
 

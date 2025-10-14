@@ -3,6 +3,6 @@
 </template>
 
 <script lang="ts" setup>
-import HeroSection from '../components/HeroSection.vue'
+import HeroSection from '@/components/sections/HeroSection.vue'
 // ...por ahora vacío...
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <section id="skills" class="relative py-20 bg-gradient-to-br from-cyan-50 via-white to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900">
+  <section id="skills" :class="[backgrounds.skills, sectionClasses]">
         <!-- Fondo animado de partículas -->
     <div class="absolute inset-0 pointer-events-none z-0">
       <div class="animate-particle absolute top-10 left-1/4 w-24 h-24 rounded-full bg-cyan-300/30 dark:bg-cyan-400/20 blur-2xl"></div>
@@ -62,6 +62,11 @@
 </style>
 
 <script setup lang="ts">
+
+import { useSectionBackground } from '@/composables/useSectionBackground'
+
+const { backgrounds, sectionClasses } = useSectionBackground()
+
 // Íconos SVG como componentes
 const VueIcon = {
   template: `<svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l10 18H2L12 2zm0 3.84L5.53 18h12.94L12 5.84z"/></svg>`

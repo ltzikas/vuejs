@@ -2,5 +2,5 @@
   <ServicesSection />
 </template>
 <script lang="ts" setup>
-import ServicesSection from '../components/ServicesSection.vue';
+import ServicesSection from '@/components/sections/ServicesSection.vue'
 </script>

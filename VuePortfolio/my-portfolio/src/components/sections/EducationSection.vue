@@ -1,5 +1,5 @@
 <template>
-  <section id="education" class="py-20 bg-white dark:bg-slate-900">
+  <section id="education" :class="[backgrounds.education, sectionClasses]">
     <div class="mx-auto max-w-4xl px-6">
       <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">{{ $t('education.title') }}</h2>
       <p class="text-slate-700 dark:text-slate-300 mb-8">{{ $t('education.subtitle') }}</p>
@@ -18,6 +18,9 @@
 </template>
 
 <script setup lang="ts">
+import { useSectionBackground } from '@/composables/useSectionBackground'
+
+const { backgrounds, sectionClasses } = useSectionBackground()
 const education = [
   {
     icon: '🎓',

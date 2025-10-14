@@ -1,147 +1,167 @@
 # My Portfolio
 
-Personal portfolio developed with Vue 3 + Vite.
+Personal portfolio built with Vue 3, Vite, TypeScript and Tailwind CSS. Light/Dark theme, ES/EN i18n, responsive design, and a unified design system.
 
 ---
 
-## About This Project
+## Features
 
-This portfolio is designed as my professional presentation and main tool to promote myself as a freelance developer. The goal is to create a visually attractive, modern, and highly usable site that showcases my skills, experience, and services to potential clients. Every section and feature is focused on communicating my value as a professional and making it easy for clients to contact or hire me.
+- Vue 3 (Composition API, `<script setup>`)
+- TypeScript
+- Tailwind CSS with custom design system
+- Dark mode (Tailwind `dark:` + preference persistence)
+- ES/EN internationalization (Vue I18n + persistence)
+- Responsive layout and smooth interactions
+- Consistent NavBar: ThemeToggle, LanguageSelector, SocialMedia
+- Footer always dark with brand accent border
 
 ---
 
-## Technologies Used
+## Tech Stack
 
-- **Vue 3** (Composition API, `<script setup>`)
-- **Vite** (ultra-fast build tool)
-- **TypeScript** (static typing)
-- **Vue Router** (SPA routing)
-- **Tailwind CSS** (utility-first CSS framework)
-- **Pinia** (global state management for theme and future features)
-- **Theme persistence** (light/dark mode with localStorage + Pinia)
-- **Architecture ready for microservices/API REST)
+- Vue 3 + Vite
+- TypeScript
+- Tailwind CSS
+- Vue I18n
 
 ---
 
 ## Project Structure
 
 ```
-src/
-├── assets/         # Images and global styles (includes tailwind.css)
-├── components/     # Reusable components (NavBar, FooterBar, ThemeToggle, LanguageSelector, etc.)
-├── layouts/        # General layouts (optional, currently empty)
-├── mocks/          # Mocked JSON data (services, projects, etc.)
-├── pages/          # Main pages (see "Sections" below)
-├── router/         # Router configuration
-├── services/       # Services to consume mocks or APIs
-├── stores/         # Pinia stores (theme, language, etc.)
-├── App.vue         # Root component with layout and dark mode
-├── main.ts         # App entry point
+my-portfolio/
+├── index.html
+├── package.json
+├── tailwind.config.js
+├── src/
+│   ├── main.ts
+│   ├── App.vue
+│   ├── assets/
+│   │   ├── tailwind.css
+│   │   └── Lucio.JPG
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── NavBar.vue
+│   │   │   └── FooterBar.vue
+│   │   ├── sections/
+│   │   │   ├── HeroSection.vue
+│   │   │   ├── AboutSection.vue
+│   │   │   ├── SkillsSection.vue
+│   │   │   ├── ExperienceSection.vue
+│   │   │   ├── ProjectsSection.vue
+│   │   │   ├── ServicesSection.vue
+│   │   │   ├── EducationSection.vue
+│   │   │   └── ContactSection.vue
+│   │   └── ui/
+│   │       ├── ThemeToggle.vue
+│   │       ├── LanguageSelector.vue
+│   │       ├── SocialMedia.vue
+│   │       └── HamburgerIcon.vue
+│   ├── composables/
+│   │   └── useSectionBackground.ts
+│   ├── locales/
+│   │   ├── en.json
+│   │   └── es.json
+│   ├── mocks/
+│   │   ├── projects.json
+│   │   └── services.json
+│   ├── services/
+│   │   ├── projectsApi.ts
+│   │   └── servicesApi.ts
+│   └── pages/                 # Legacy (no router). Kept for reference.
+└── public/
+    └── vite.svg
 ```
 
----
-
-## Sections
-
-The portfolio is organized into the following sections for a clear and professional presentation:
-
-- **Sobre mí / About:** Personal and professional background, values, interests, and photo.
-- **Skills / Habilidades:** Technologies, tools, frameworks, and soft skills.
-- **Experiencia / Experience:** Work history, roles, achievements, and companies.
-- **Proyectos / Projects:** Portfolio of personal and professional projects, with links and descriptions.
-- **Servicios / Services:** Description of freelance or consulting services offered.
-- **Educación / Education:** Degrees, courses, and relevant certifications.
-- **Contacto / Contact:** Contact form, email, and social links.
+Note: The app is a single-page layout using sections. The folder `src/pages/` is legacy and not used by the current build.
 
 ---
 
-## Implemented Features
+## Design System
 
-### Functional
-
-- **SPA with navigation between pages:** About, Services, Projects, Contact.
-- **Mock data consumption:** Services and Projects are loaded from JSON files simulating a future API.
-- **Decoupled architecture:** Data is fetched via services, making it easy to switch to a real API.
-- **Light/Dark mode:** Toggle to switch theme, with persistence in localStorage and automatic detection of system preference.
-- **Global theme state with Pinia:** The theme (dark/light) is managed globally and reactively using Pinia, so all components can access and react to changes without prop drilling.
-- **Custom color palette:** Tailwind configured with custom colors for visual identity.
-
-### Technical
-
-- **Use of Composition API and `<script setup>`** for simpler and more reactive components.
-- **Pinia for global state management:** Used for theme and ready for future global features.
-- **Reactive variables (`ref`, `computed`)** and effects (`watchEffect`) to manage state and logic.
-- **Tailwind CSS** for fast, responsive, and professional layout.
-- **100% ES Modules configuration** (no CommonJS mix).
-- **Ready for new features:** social links, meeting scheduling, chatbot, etc.
+- Colors (semantic):
+  - primary: blue-600 (light) / blue-900 (dark)
+  - background: slate-100 (light) / slate-950 (dark)
+  - surface: white (light) / slate-800 (dark)
+  - text: slate-800 (light) / slate-50 (dark)
+- Pattern: zebra alternation between surface/background across sections.
+- Components use Tailwind classes directly; dynamic classes only for animations/positions.
 
 ---
 
-## Theme Management with Pinia
+## Theme Strategy (Dark/Light)
 
-- The theme (dark/light) is managed globally using a Pinia store (`src/stores/theme.ts`).
-- The store synchronizes the theme with `localStorage` for persistence and applies the `dark` class to `<html>` for Tailwind compatibility.
-- Any component can access or modify the theme using `useThemeStore()`, making the codebase clean and scalable.
-- No need to pass theme state as props between components.
-
----
-
-## Internationalization (i18n)
-
-- The project uses [vue-i18n](https://vue-i18n.intlify.dev/) for scalable multi-language support.
-- Language files are organized per language (e.g., `src/locales/en.json`, `src/locales/es.json`).
-- The language preference is managed globally using a Pinia store (`src/stores/language.ts`) and is persisted in localStorage.
-- The store synchronizes the selected language with vue-i18n, so all components update reactively when the language changes.
-- A language selector component allows users to switch between Spanish and English (and more in the future).
-- The structure is ready to scale to more languages and to migrate content to a database.
+- Styling: Tailwind `dark:` classes (no JS-based styling).
+- Persistence: `localStorage.getItem('theme')` to remember user choice.
+- Toggle:
+  - Toggles the `dark` class on `<html>`.
+  - Saves preference in `localStorage`.
+- Optional: prevent flash of wrong theme by adding a tiny inline script in `index.html` to set `dark` before CSS loads.
 
 ---
 
-## Color Palette
+## Internationalization
 
-The portfolio uses a custom color palette for both light and dark themes to reinforce personal branding and ensure a modern, professional look.
-
-| Role         | Light Theme                | Dark Theme                  |
-|--------------|---------------------------|-----------------------------|
-| Background   | #F8FAFC (slate-50)        | #0F172A (slate-900)         |
-| Surface      | #FFFFFF (white)           | #1E293B (slate-800)         |
-| Primary      | #2563EB (blue-600)        | #60A5FA (blue-400)          |
-| Accent       | #F59E42 (orange-400)      | #FBBF24 (amber-400)         |
-| Text         | #1E293B (slate-800)       | #F1F5F9 (slate-100)         |
-| Muted Text   | #64748B (slate-400)       | #94A3B8 (slate-400)         |
-| Border       | #E2E8F0 (slate-200)       | #334155 (slate-700)         |
-
-> You can adjust these colors to better fit your personal brand.
+- Vue I18n with ES/EN.
+- User preference persisted in `localStorage` as `lang`.
+- LanguageSelector UI mirrors ThemeToggle styles.
 
 ---
 
-## Next Steps
+## Setup
 
-- [ ] **Update NavBar and routes** to reflect all key portfolio sections.
-- [ ] **Implement and complete each section**: About, Skills, Experience, Projects, Services, Education, Contact.
-- [ ] **Optimize the Services section** to clearly highlight the freelance solutions I offer.
-- [ ] **Add LinkedIn and GitHub links** in a visible and attractive way.
-- [ ] **Improve the Contact section**: functional form, direct links, and/or meeting scheduling integration.
-- [ ] **Incorporate visual details**: professional avatar, custom banner, and graphic elements to reinforce my personal brand.
-- [ ] **Refine texts and content** to convey trust, professionalism, and client focus.
-- [ ] (Optional) **Integrate a chatbot (ChatGPT)** for quick inquiries from potential clients.
-- [ ] (Optional) **Add testimonials or references** from previous clients.
+Prerequisites: Node 18+
 
----
-
-## Installation & Usage
-
-```sh
+```bash
+# Install
 npm install
+
+# Dev
 npm run dev
+
+# Build
+npm run build
+
+# Preview production
+npm run preview
 ```
+
+Recommended VS Code extensions:
+- Vue - Official (Volar)
+
+---
+
+## Scripts (package.json)
+
+- dev: start Vite dev server
+- build: Vite build
+- preview: preview dist
+
+---
+
+## Accessibility & UX
+
+- Focus-visible rings on interactive elements
+- Hover rings + subtle scale on toggles
+- High-contrast palette in both themes
+
+---
+
+## SEO (optional suggestions)
+
+- Add meta description and Open Graph tags in `index.html`.
+- Set `theme-color` for light/dark.
+- Add `public/robots.txt` and a `sitemap.xml` if deployed.
 
 ---
 
 ## Notes
 
-- The project is designed to be easily scalable and adaptable to a real API.
-- Consistent use of ES Modules and service-based architecture is recommended.
-- **For Vue 3 projects, use the [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) extension in VSCode instead of Vetur.**
+- No Vue Router needed; all content lives in sections on the same page.
+- API/service files and mocks are ready to wire projects/services content.
 
 ---
+
+## License
+
+© 2025 Lucio Tzikas. All rights reserved.

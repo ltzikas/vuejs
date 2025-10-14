@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="py-20 bg-gradient-to-br from-cyan-50 via-white to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900">
+  <section id="contact" :class="[backgrounds.contact, 'py-20 px-4 md:px-8']">
     <div class="mx-auto max-w-lg px-6">
       <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">{{ $t('contact.title') }}</h2>
       <p class="text-slate-700 dark:text-slate-300 mb-8">{{ $t('contact.subtitle') }}</p>
@@ -17,3 +17,8 @@
     </div>
   </section>
 </template>
+<script setup lang="ts">
+import { useSectionBackground } from '@/composables/useSectionBackground'
+
+const { backgrounds } = useSectionBackground()
+</script>

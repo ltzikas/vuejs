@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="py-20 bg-surface-light dark:bg-surface-dark border-y border-slate-200/60 dark:border-slate-700/50">
+  <section id="about" :class="[backgrounds.about, sectionClasses]">
     <div class="mx-auto max-w-7xl px-6">
       <header class="max-w-2xl">
         <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100">
@@ -50,6 +50,9 @@
 
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n'
+import { useSectionBackground } from '@/composables/useSectionBackground'
+
+const { backgrounds, sectionClasses } = useSectionBackground()
 
 interface Step {
   title: string

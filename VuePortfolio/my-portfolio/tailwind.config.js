@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         background: {
-          light: '#F8FAFC',
+          light: '#F1F5F9',
           dark: '#0F172A',
         },
         surface: {
