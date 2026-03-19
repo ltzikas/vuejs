@@ -20,28 +20,29 @@
           </div>
 
           <!-- Title -->
-          <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
             <span class="block text-slate-400 text-base sm:text-lg font-semibold uppercase tracking-[0.2em] dark:text-slate-300">{{ $t('hero.eyebrow') }}</span>
             <span class="mt-2 block">
               <span class="bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-300 dark:via-sky-400 dark:to-indigo-400">
                 {{ $t('hero.titleStrong') }}
               </span>
               <br class="hidden sm:block" />
-              <span class="text-slate-900 dark:text-slate-100">
+              <span class="text-2xl sm:text-3xl md:text-4xl text-slate-900 dark:text-slate-100">
                 {{ $t('hero.titleRest') }}
               </span>
             </span>
           </h1>
 
           <!-- Typed line -->
-          <p class="mt-4 text-lg sm:text-xl text-slate-600 dark:text-slate-300 min-h-[2.25rem]">
-            <span class="text-cyan-600 dark:text-cyan-300">•</span>
-            <span class="ml-2">{{ typedText }}</span>
-            <span class="border-r-2 border-cyan-600 dark:border-cyan-300 ml-1 animate-caret"></span>
+          <p
+            class="mt-4 mb-1 inline-block min-h-[2rem] px-1 py-0.5 rounded-lg bg-cyan-50/60 dark:bg-cyan-900/30 border border-cyan-100 dark:border-cyan-800 font-mono text-sm sm:text-base text-cyan-700 dark:text-cyan-200 tracking-wide transition-all duration-400 shadow"
+          >
+            <span>{{ typedText }}</span
+            ><span class="border-r-2 border-cyan-400 dark:border-cyan-300 ml-1 animate-caret"></span>
           </p>
 
           <!-- Copy -->
-          <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-xl mx-auto md:mx-0">
+          <p class="mt-3 text-slate-600 dark:text-slate-300 max-w-xl mx-auto md:mx-0 whitespace-pre-line">
             {{ $t('hero.description') }}
           </p>
 
@@ -62,33 +63,24 @@
                      dark:border-white/15 dark:bg-white/10 dark:text-slate-100 dark:hover:bg-white/20"
             >
               {{ $t('hero.ctaSecondary') }}
-            </a>
-            <a
-              :href="resumeUrl"
-              target="_blank"
-              rel="noopener"
-              class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 font-medium text-slate-900 hover:bg-slate-50 transition-colors
-                     dark:border-white/15 dark:bg-white/10 dark:text-slate-100 dark:hover:bg-white/20"
-            >
-              {{ $t('hero.ctaResume') }}
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M14 3v2h3.59L7 15.59 8.41 17 19 6.41V10h2V3z"/><path d="M5 5h5V3H3v7h2z"/>
+              <svg class="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
               </svg>
             </a>
           </div>
           <!-- Stats -->
           <dl class="mt-10 grid grid-cols-3 gap-4 max-w-md mx-auto md:mx-0">
             <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5">
-              <dt class="text-xs text-slate-400 dark:text-slate-300">{{ $t('hero.stats.years') }}</dt>
+              <dd class="text-2xl font-semibold text-slate-900 dark:text-slate-100">+15</dd>
+              <dt class="mt-2 text-xs text-slate-400 dark:text-slate-300">{{ $t('hero.stats.years') }}</dt>        
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5">
+              <dd class="text-2xl font-semibold text-slate-900 dark:text-slate-100">+20</dd>
+              <dt class="mt-2 text-xs text-slate-400 dark:text-slate-300">{{ $t('hero.stats.projects') }}</dt>              
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5">
               <dd class="text-2xl font-semibold text-slate-900 dark:text-slate-100">+5</dd>
-            </div>
-            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5">
-              <dt class="text-xs text-slate-400 dark:text-slate-300">{{ $t('hero.stats.projects') }}</dt>
-              <dd class="text-2xl font-semibold text-slate-900 dark:text-slate-100">+25</dd>
-            </div>
-            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5">
-              <dt class="text-xs text-slate-400 dark:text-slate-300">{{ $t('hero.stats.clients') }}</dt>
-              <dd class="text-2xl font-semibold text-slate-900 dark:text-slate-100">+12</dd>
+              <dt class="mt-2 text-xs text-slate-400 dark:text-slate-300">{{ $t('hero.stats.clients') }}</dt>      
             </div>
           </dl>
         </div>
@@ -125,27 +117,20 @@ import { useSectionBackground } from '@/composables/useSectionBackground'
 
 // Imagen de perfil
 const photoUrl = new URL('@/assets/Lucio.JPG', import.meta.url).href
-// CV (coloca un PDF en /src/assets/cv.pdf o ajusta la ruta)
-const resumeUrl = new URL('@/assets/cv.pdf', import.meta.url).href
 // Fondo decorativo
 const { backgrounds } = useSectionBackground()
 
 // Typed effect con i18n
-const { t, locale } = useI18n()
+const {tm, locale } = useI18n()
 const typedText = ref('')
 let typingTimer: number | undefined
 
 function phrases() {
   // Frases leídas desde i18n
-  const arr = t('hero.typed', 0) as unknown as string[] | undefined
+  const arr = tm('hero.typed') as unknown as string[]
+
   // Si $t no devuelve array, usa fallback local:
-  if (!Array.isArray(arr)) {
-    return [
-      'Frontend con Vue 3 + TypeScript',
-      'UI/UX • Accesibilidad • Performance',
-      'APIs limpias y mantenibles',
-    ]
-  }
+
   return arr
 }
 
@@ -202,7 +187,7 @@ watch(locale, () => startTyping())
 
 @keyframes caret {
   0%, 100% { opacity: 0 }
-  50% { opacity: 1 }
+  50% { opacity: 0.8 }
 }
 .animate-caret { animation: caret 1s step-end infinite; }
 </style>

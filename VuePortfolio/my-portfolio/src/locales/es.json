@@ -6,24 +6,23 @@
   "contact": "Contacto",
   "hero": {
     "available": "Disponible para nuevos proyectos",
-    "eyebrow": "Ingeniero de software • Frontend",
-    "titleStrong": "Diseño y desarrollo",
-    "titleRest": "experiencias web modernas",
+    "eyebrow": "INGENIERO INFORMÁTICO · ESTRATEGIA & ARQUITECTURA DIGITAL",
+    "titleStrong": "Traduzco necesidades de negocio",
+    "titleRest": "en soluciones digitales",
     "typed": [
-      "Frontend con Vue 3 + TypeScript",
-      "UI/UX • Accesibilidad • Performance",
-      "APIs limpias y mantenibles"
+      "Arquitectura sólida y decisiones tecnológicas claras",
+      "Soluciones pensadas para cada contexto",
+      "De la estrategia a la implementación"
     ],
-    "description": "Combino diseño y código para crear interfaces rápidas, accesibles y escalables. Trabajo con equipos y clientes para llevar ideas a producción con calidad.",
-    "ctaPrimary": "Ver proyectos",
-    "ctaSecondary": "Contactar",
-    "ctaResume": "Ver CV",
+    "description": "Trabajo sobre desafíos complejos, ayudando a diseñar, evolucionar e implementar plataformas y productos digitales con criterio técnico y visión de largo plazo.\nAbarco el ciclo completo: análisis, arquitectura, elección tecnológica e implementación, asegurando soluciones escalables, sostenibles y bien resueltas.",
+    "ctaPrimary": "Ver casos",
+    "ctaSecondary": "Hablemos",
     "availability": "Disponible ahora",
     "photoAlt": "Foto de perfil de Lucio Tzikas",
     "stats": {
-      "years": "Años de experiencia",
-      "projects": "Proyectos entregados",
-      "clients": "Clientes satisfechos"
+      "years": "años en entornos tecnológicos complejos",
+      "projects": "Productos en ecosistemas integrados",
+      "clients": "Países en operación"
     }
   },
   "approachSection": {

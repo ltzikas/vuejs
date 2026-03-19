@@ -5,25 +5,24 @@
   "projects": "Projects",
   "contact": "Contact",
   "hero": {
-    "available": "Open for new projects",
-    "eyebrow": "Software engineer • Frontend",
-    "titleStrong": "I design and build",
-    "titleRest": "modern web experiences",
+    "available": "Available for new projects",
+    "eyebrow": "COMPUTER ENGINEER · DIGITAL STRATEGY & ARCHITECTURE",
+    "titleStrong": "I translate business needs",
+    "titleRest": "into digital solutions",
     "typed": [
-      "Frontend with Vue 3 + TypeScript",
-      "UI/UX • Accessibility • Performance",
-      "Clean and maintainable APIs"
+      "Solid architecture and clear technology choices",
+      "Solutions tailored to every context",
+      "From strategy to implementation"
     ],
-    "description": "I blend design and code to craft fast, accessible, and scalable interfaces. I work with teams and clients to ship ideas to production with quality.",
-    "ctaPrimary": "View projects",
-    "ctaSecondary": "Get in touch",
-    "ctaResume": "View resume",
+    "description": "I tackle complex challenges, helping to design, evolve, and implement digital platforms and products with technical expertise and a long-term vision.\nI cover the entire cycle: analysis, architecture, technology selection, and implementation, ensuring scalable, sustainable, and well-crafted solutions.",
+    "ctaPrimary": "See cases",
+    "ctaSecondary": "Let's talk",
     "availability": "Available now",
     "photoAlt": "Profile photo of Lucio Tzikas",
     "stats": {
-      "years": "Years experience",
-      "projects": "Projects delivered",
-      "clients": "Happy clients"
+      "years": "Years in complex tech environments",
+      "projects": "Products in integrated ecosystems",
+      "clients": "Countries in operation"
     }
   },
   "approachSection": {
