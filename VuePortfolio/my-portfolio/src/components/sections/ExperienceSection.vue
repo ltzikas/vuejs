@@ -1,178 +1,129 @@
 <template>
-  <section id="experience" :class="[backgrounds.experience, sectionClasses]">
-    <div class="mx-auto max-w-5xl px-6">
-      <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">{{ $t('experience.title') }}</h2>
-      <p class="text-slate-700 dark:text-slate-300 mb-10">{{ $t('experience.subtitle') }}</p>
+  <section id="experience" class="py-24 bg-white dark:bg-slate-800">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
+          {{ $t('experienceSection.area') }}
+        </p>
+        <h2 class="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-slate-950 dark:text-slate-100">
+          {{ $t('experienceSection.title') }}
+        </h2>
+        <p class="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
+          {{ $t('experienceSection.description') }}
+        </p>
+      </div>
 
-      <div class="relative">
-        <!-- Línea de tiempo central (visible en md+) -->
-        <div class="pointer-events-none hidden md:block absolute left-1/2 top-0 -translate-x-1/2 h-full w-[2px] rounded bg-gradient-to-b from-cyan-400 via-indigo-400 to-fuchsia-400 dark:from-cyan-600 dark:via-indigo-600 dark:to-fuchsia-600"></div>
-
-        <transition name="fade" mode="out-in">
-          <div :key="current" class="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
-            <article
-              v-for="(item, idx) in visibleCards"
-              :key="item.company + idx"
-              class="relative p-6 rounded-xl shadow-lg border bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 transition-all"
-            >
-              <!-- Punto que conecta con la línea -->
-              <span
-                class="hidden md:flex absolute top-7 w-4 h-4 rounded-full border-4 border-white dark:border-slate-900 shadow"
-                :class="[
-                  idx === 0 ? 'right-[-20px]' : 'left-[-20px]',
-                  'bg-cyan-400 dark:bg-cyan-600'
-                ]"
-                aria-hidden="true"
-              ></span>
-
-              <header class="flex flex-wrap items-center gap-2 mb-2">
-                <span class="text-2xl text-indigo-500 dark:text-indigo-300">{{ item.icon }}</span>
-                <h3 class="font-semibold text-lg text-slate-900 dark:text-white">{{ item.role }}</h3>
-                <span class="text-xs px-2 py-1 rounded bg-cyan-100 text-cyan-700 dark:bg-cyan-900 dark:text-cyan-300">{{ item.period }}</span>
-              </header>
-
-              <div class="text-slate-600 dark:text-slate-400 font-medium mb-2">{{ item.company }}</div>
-
-              <ul class="list-disc ml-5 text-slate-600 dark:text-slate-400 text-sm space-y-1">
-                <li v-for="desc in item.tasks" :key="desc">{{ desc }}</li>
-              </ul>
-
-              <div v-if="item.achievements?.length" class="mt-3">
-                <span class="font-semibold text-cyan-700 dark:text-cyan-300 text-xs">Logros:</span>
-                <ul class="list-disc ml-5 text-xs text-slate-500 dark:text-slate-400 space-y-1">
-                  <li v-for="ach in item.achievements" :key="ach">{{ ach }}</li>
-                </ul>
-              </div>
-            </article>
-          </div>
-        </transition>
-
-        <!-- Controles -->
-        <button @click="prev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full p-2 shadow hover:bg-cyan-100 dark:hover:bg-cyan-900 transition" aria-label="Anterior">
-          <svg class="w-5 h-5 text-cyan-600 dark:text-cyan-300" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-        </button>
-        <button @click="next" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full p-2 shadow hover:bg-cyan-100 dark:hover:bg-cyan-900 transition" aria-label="Siguiente">
-          <svg class="w-5 h-5 text-cyan-600 dark:text-cyan-300" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-        </button>
-
-        <!-- Indicadores -->
-        <div class="flex justify-center gap-2 mt-6">
+      <!-- Cards -->
+      <div class="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
+        <div
+          v-for="(item, idx) in $tm('experienceSection.cards')"
+          :key="idx"
+          class="flex flex-col rounded-3xl border border-slate-200 bg-white p-5 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 dark:border-white/10 dark:bg-white/5 dark:hover:border-cyan-300 hover:shadow-lg"
+        >
+          <h3 class="text-lg font-semibold text-slate-950 dark:text-slate-100">
+            {{ item.title }}
+          </h3>
+          <p class="py-5 text-sm leading-6 text-slate-600 dark:text-slate-300">
+            {{ item.summary }}
+          </p>
           <button
-            v-for="(_, idx) in totalSteps"
-            :key="idx"
-            @click="goTo(idx)"
-            :class="[
-              'w-2.5 h-2.5 rounded-full transition-transform',
-              idx === current ? 'bg-cyan-500 dark:bg-cyan-300 scale-125' : 'bg-cyan-200 dark:bg-cyan-700'
-            ]"
-            aria-label="Ir al slide"
-          />
+            type="button"
+            @click="openModal(item)"
+            class="mt-auto inline-flex items-center gap-1 text-cyan-600 dark:text-cyan-300 text-sm font-medium hover:underline focus:outline-none"
+          >
+            {{ $t('experienceSection.seeDetails') }}
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
         </div>
+      </div>
+
+      <!-- Modal -->
+      <Transition
+        enter-active-class="transition duration-200 ease-out"
+        enter-from-class="opacity-0"
+        enter-to-class="opacity-100"
+        leave-active-class="transition duration-150 ease-in"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0"
+      >
+        <div
+          v-if="modalOpen"
+          class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
+          @click.self="closeModal"
+        >
+          <Transition
+            appear
+            enter-active-class="transition duration-200 ease-out"
+            enter-from-class="opacity-0 scale-[0.98] translate-y-1"
+            enter-to-class="opacity-100 scale-100 translate-y-0"
+            leave-active-class="transition duration-150 ease-in"
+            leave-from-class="opacity-100 scale-100 translate-y-0"
+            leave-to-class="opacity-0 scale-[0.98] translate-y-1"
+          >
+            <div class="relative w-full max-w-lg rounded-3xl border border-cyan-200 bg-white p-6 shadow-xl dark:border-cyan-900 dark:bg-slate-900 transition-all duration-300">
+              <button class="absolute top-4 right-6 text-slate-400 hover:text-cyan-500 text-2xl" @click="closeModal" aria-label="Cerrar">
+                &times;
+              </button>
+              <h3 class="text-2xl font-bold text-slate-950 dark:text-slate-100 mb-2">
+                {{ modalItem.title }}
+              </h3>
+              <p class="mb-4 text-base leading-7 text-slate-600 dark:text-slate-300">
+                {{ modalItem.description }}
+              </p>
+              <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
+                <div
+                  v-for="bullet in modalItem.bullets"
+                  :key="bullet"
+                  class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-700 dark:border-white/10 dark:bg-white/10 dark:text-slate-200"
+                >
+                  {{ bullet }}
+                </div>
+              </div>
+            </div>
+          </Transition>
+        </div>
+      </Transition>
+
+      <!-- Recorrido -->
+      <div class="mt-8 rounded-3xl border border-slate-200 bg-white p-5 md:p-6 dark:border-white/10 dark:bg-white/5">
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-400 dark:text-slate-400">
+          {{ $t('experienceSection.journeyTitle') }}
+        </p>
+        <p class="mt-4 text-base font-medium leading-7 text-slate-900 dark:text-slate-100">
+          <span v-for="(step, i) in $tm('experienceSection.journeyPath')" :key="i">
+            <span v-if="Number(i) > 0" class="mx-2 text-slate-300 dark:text-slate-600">→</span>
+            <span class="font-semibold">{{ step }}</span>
+          </span>
+        </p>
+        <p class="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
+          {{ $t('experienceSection.journeyDescription') }}
+        </p>  
+        <hr class="my-2 border-t border-slate-100 dark:border-slate-700" />   
+        <p class="text-base leading-7 text-slate-600 dark:text-slate-300">
+          <span class="font-semibold text-slate-900 dark:text-slate-100">{{ $t('experienceSection.baseTitle') }}</span>
+          {{ $t('experienceSection.baseDescription') }}
+        </p>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
-import { useSectionBackground } from '@/composables/useSectionBackground'
+import { ref } from 'vue'
 
-const { backgrounds, sectionClasses } = useSectionBackground()
+const modalOpen = ref(false)
+const modalItem = ref({ title: '', summary: '', description: '', bullets: [] })
 
-
-const experiences = [
-  {
-    icon: '🏢',
-    role: 'Frontend Developer',
-    company: 'Tech Solutions',
-    period: '2022 - Presente',
-    tasks: [
-      'Desarrollo de interfaces SPA con Vue 3 y Tailwind.',
-      'Optimización de performance y accesibilidad.',
-      'Colaboración con equipos de backend y diseño.'
-    ],
-    achievements: [
-      'Reducción de tiempos de carga en un 40%.',
-      'Reconocimiento interno por liderazgo técnico.'
-    ]
-  },
-  {
-    icon: '🧑‍💻',
-    role: 'Freelance Web Developer',
-    company: 'Clientes varios',
-    period: '2020 - 2022',
-    tasks: [
-      'Implementación de landing pages y dashboards.',
-      'Integración de APIs y sistemas de pago.',
-      'Consultoría en UX/UI y arquitectura frontend.'
-    ],
-    achievements: [
-      'Más de 20 proyectos entregados.',
-      'Feedback positivo de clientes por comunicación y resultados.'
-    ]
-  },
-  {
-    icon: '🚀',
-    role: 'Intern Developer',
-    company: 'Startup XYZ',
-    period: '2019 - 2020',
-    tasks: [
-      'Soporte en migración de stack a Vue.',
-      'Automatización de procesos internos.',
-      'Documentación y testing.'
-    ],
-    achievements: [
-      'Participación en lanzamiento de producto.',
-      'Mejora de procesos con automatización.'
-    ]
-  },
-  {
-    icon: '🌐',
-    role: 'Consultor Frontend',
-    company: 'Agencia Web',
-    period: '2018 - 2019',
-    tasks: [
-      'Auditoría de performance y accesibilidad.',
-      'Capacitación a equipos internos.',
-      'Prototipado rápido de soluciones.'
-    ],
-    achievements: ['Mejora de Lighthouse score en 30%.']
-  }
-]
-
-const current = ref(0)
-
-// Ventana deslizante (2 por vez) con wrap-around
-const visibleCards = computed(() => {
-  if (experiences.length === 0) return []
-  const a = experiences[current.value % experiences.length]
-  const b = experiences[(current.value + 1) % experiences.length]
-  return [a, b]
-})
-
-// Pasos = longitud (se mueve de a 1 para efecto continuo)
-const totalSteps = computed(() => experiences.length)
-
-function next() {
-  current.value = (current.value + 1) % experiences.length
-}
-function prev() {
-  current.value = (current.value - 1 + experiences.length) % experiences.length
-}
-function goTo(i: number) {
-  current.value = i % experiences.length
+function openModal(item: any) {
+  modalItem.value = item
+  modalOpen.value = true
+  document.body.style.overflow = 'hidden'
 }
 
-// Autoplay (pausa al interactuar)
-let timer: number | undefined
-function startAuto() { timer = window.setInterval(next, 4500) }
-function stopAuto() { if (timer) clearInterval(timer) }
-
-onMounted(startAuto)
-onBeforeUnmount(stopAuto)
+function closeModal() {
+  modalOpen.value = false
+  document.body.style.overflow = ''
+}
 </script>
-
-<style scoped>
-.fade-enter-active, .fade-leave-active { transition: opacity .35s, transform .35s; }
-.fade-enter-from, .fade-leave-to { opacity: 0; transform: translateY(6px); }
-</style>

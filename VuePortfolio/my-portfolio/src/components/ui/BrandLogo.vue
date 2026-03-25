@@ -19,7 +19,7 @@
             Lucio Tzikas
           </span>
           <span class="text-[11px] text-blue-700 dark:text-blue-400 leading-none font-medium tracking-wide">
-            Ingeniero Informático
+            {{ $t('badge') }}
           </span>
         </div>
         

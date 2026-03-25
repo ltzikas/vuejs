@@ -13,7 +13,6 @@
       <ExperienceSection />
       <ProjectsSection />
       <ServicesSection />
-      <EducationSection />
       <ContactSection />
     </main>
     <FooterBar />
@@ -28,7 +27,6 @@ import SkillsSection from '@/components/sections/SkillsSection.vue'
 import ExperienceSection from '@/components/sections/ExperienceSection.vue'
 import ProjectsSection from '@/components/sections/ProjectsSection.vue'
 import ServicesSection from '@/components/sections/ServicesSection.vue'
-import EducationSection from '@/components/sections/EducationSection.vue'
 import ContactSection from '@/components/sections/ContactSection.vue'
 import FooterBar from '@/components/layout/FooterBar.vue'
 </script>

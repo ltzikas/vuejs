@@ -85,12 +85,10 @@ onUnmounted(() => {
 });
 
 const links = [
-  { to: "#about", label: "about" },
   { to: "#skills", label: "skills" },
   { to: "#experience", label: "experience" },
   { to: "#projects", label: "projects" },
   { to: "#services", label: "services" },
-  { to: "#education", label: "education" },
   { to: "#contact", label: "contact" },
 ];
 </script>
