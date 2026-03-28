@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Landing Page para Startup",
+    "description": "Diseño y desarrollo de una landing page para captar leads.",
+    "tech": ["Vue", "Vite", "CSS"],
+    "image": "/assets/landing.png"
+  },
+  {
+    "id": 2,
+    "name": "Panel de Administración",
+    "description": "Dashboard interactivo para gestión de usuarios y reportes.",
+    "tech": ["Vue", "TypeScript", "Chart.js"],
+    "image": "/assets/dashboard.png"
+  }
+]

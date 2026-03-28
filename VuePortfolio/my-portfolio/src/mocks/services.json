@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": {
+      "es": "Desarrollo Web",
+      "en": "Web Development"
+    },
+    "description": {
+      "es": "Construcción de sitios y aplicaciones web modernas.",
+      "en": "Building modern websites and web applications."
+    },
+    "icon": "mdi-web"
+  },
+  {
+    "id": 2,
+    "title": {
+      "es": "Consultoría IT",
+      "en": "IT Consulting"
+    },
+    "description": {
+      "es": "Asesoramiento en tecnología y transformación digital.",
+      "en": "Technology consulting and digital transformation."
+    },
+    "icon": "mdi-account-tie"
+  },
+  {
+    "id": 3,
+    "title": {
+      "es": "Integración de APIs",
+      "en": "API Integration"
+    },
+    "description": {
+      "es": "Conexión de sistemas y servicios externos mediante APIs REST y GraphQL.",
+      "en": "Connecting systems and external services via REST and GraphQL APIs."
+    },
+    "icon": "mdi-api"
+  }
+]

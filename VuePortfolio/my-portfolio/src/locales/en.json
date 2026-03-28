@@ -1,0 +1,310 @@
+{
+  "badge": "Computer Engineer",
+  "greeting": "Welcome to my portfolio!",
+  "skills": "Capabilities",
+  "experience": "Experience",
+  "services": "Services",
+  "projects": "Cases",
+  "contact": "Contact",
+  "hero": {
+    "available": "Available for new projects",
+    "eyebrow": "COMPUTER ENGINEER · DIGITAL STRATEGY & ARCHITECTURE",
+    "titleStrong": "I translate business needs",
+    "titleRest": "into digital solutions",
+    "typed": [
+      "Robust architecture and clear technology decisions",
+      "Solutions tailored to each context",
+      "From strategy to implementation"
+    ],
+    "description": "I work on complex challenges, helping to design, evolve, and implement platforms and digital products with technical judgement and long-term vision.\nI cover the full cycle: analysis, architecture, technology selection and implementation, ensuring scalable, sustainable and well-crafted solutions.",
+    "ctaPrimary": "See cases",
+    "ctaSecondary": "Let's talk",
+    "availability": "Available now",
+    "photoAlt": "Lucio Tzikas profile photo",
+    "stats": {
+      "years": "years in complex tech environments",
+      "projects": "Products in integrated ecosystems",
+      "clients": "Countries in operation"
+    }
+  },
+  "approachSection": {
+    "title": "Work approach",
+    "subtitle": "How I tackle each context",
+    "description": "I work with judgement, not recipes: I analyse the context, define a clear technical direction, and execute with focus on scalability, sustainability and evolution.",
+    "stepsTitle": "Pillars of my approach",
+    "steps": [
+      {
+        "title": "Context",
+        "desc": "I understand the problem, constraints, current operation and objectives before defining a solution."
+      },
+      {
+        "title": "Technical direction",
+        "desc": "I define architecture, alternatives and technology decisions focusing on clarity, scalability and sustainability."
+      },
+      {
+        "title": "Execution",
+        "desc": "I implement with focus on priorities, coordination and real progress."
+      },
+      {
+        "title": "Evolution",
+        "desc": "I design solutions to be maintainable, scalable and integrable over time without unnecessary complexity."
+      }
+    ],
+    "valuesTitle": "Work principles",
+    "values": [
+      "Judgement over trends",
+      "Clear technical decisions",
+      "Sustainable architecture",
+      "Less complexity, more focus",
+      "Execution aligned with context"
+    ]
+  },
+  "skillsSection": {
+    "area": "Areas of contribution",
+    "title": "Capabilities",
+    "description": "I provide technical judgement, direction and execution in contexts where it's necessary to define, organise, modernise or scale digital solutions.",
+    "cards": [
+      {
+        "title": "Solution architecture",
+        "desc": "Defining architecture and technical decisions to build clear, sustainable and scalable solutions."
+      },
+      {
+        "title": "Product and platform evolution",
+        "desc": "Evolving existing products and platforms to support growth, operations and change."
+      },
+      {
+        "title": "Technology modernization",
+        "desc": "Upgrading platforms, reducing technical debt and preparing for future scalability."
+      },
+      {
+        "title": "Integration and ecosystems",
+        "desc": "Integrating systems, processes and components that support broader operations."
+      },
+      {
+        "title": "Technical leadership and delivery",
+        "desc": "Leading technical delivery, aligning definition, implementation and progress with focus on clarity and results."
+      },
+      {
+        "title": "Complex and regional contexts",
+        "desc": "Working in environments with multiple stakeholders, distributed operations and needs that require judgement, not just recipes."
+      }
+    ],
+    "baseTitle": "Technical foundation",
+    "base": [
+      ".NET and Microsoft ecosystem",
+      "Data modeling and persistence",
+      "APIs and integrations",
+      "Modern front-end architectures",
+      "Software architecture and maintainability",
+      "Productivity accelerators with AI"
+    ]
+  },
+  "experienceSection": {
+    "area": "Professional background",
+    "title": "Experience",
+    "description": "I work in complex corporate environments, combining technical leadership, modernization and team development.",
+    "cards": [
+      {
+        "title": "Portfolios and regional operations",
+        "summary": "Portfolios integrated into business ecosystems with regional reach.",
+        "description": "I have worked on portfolios with regional scope, coordinating continuity, evolution and maintenance within broader business ecosystems.",
+        "bullets": [
+          "Portfolios spanning LATAM",
+          "Integration with critical business processes and operations",
+          "Coordinating regional needs and technical direction",
+          "Continuous improvement of platforms in real-world use"
+        ]
+      },
+      {
+        "title": "Modernization and technology evolution",
+        "summary": "Upgrading platforms to scale with greater robustness.",
+        "description": "I have driven technology modernization initiatives, renewing components and adopting more sustainable architectures, preparing platforms for growth and greater efficiency.",
+        "bullets": [
+          "Modernizing critical applications and components",
+          "Reducing technical debt",
+          "Adopting cloud architectures and more sustainable approaches",
+          "Preparing for operational growth and efficiency"
+        ]
+      },
+      {
+        "title": "Technical leadership and team development",
+        "summary": "Teams and technical disciplines aligned with delivery, quality and professional growth.",
+        "description": "I have led teams and technical disciplines to turn definitions into real progress, combining delivery quality, production support and professional development.",
+        "bullets": [
+          "Coordinating analysis, development, testing and operations",
+          "Aligning technical definitions with implementation",
+          "Production support and focus on delivery quality",
+          "Mentoring and developing teams"
+        ]
+      }
+    ],
+    "seeDetails": "See details",
+    "journeyTitle": "Career path",
+    "journeyPath": [
+      "Technical Lead",
+      "Engineering Lead",
+      "Application Development Manager"
+    ],
+    "journeyDescription": "Experience developed across projects and organisations in various industries, evolving from technical team leadership to portfolio management, modernization and initiative direction.",
+    "baseTitle": "Professional foundation:",
+    "baseDescription": "Degree in Computer Engineering, complemented by hands-on experience in architecture, delivery and the evolution of products and platforms."
+  },
+  "projectsSection": {
+    "area": "Representative cases",
+    "title": "Cases",
+    "description": "A selection of cases where I combined technical judgement, direction and execution to support operations, platforms and highly complex contexts.",
+    "viewCase": "See case",
+    "context": "Context",
+    "challenge": "Challenge",
+    "intervention": "Intervention",
+    "impact": "Impact",
+    "cases": [
+      {
+        "id": "commercial-platforms",
+        "title": "Commercial platform evolution and regional expansion",
+        "summary": "Core commercial platforms integrated into critical operations, supporting business changes, high demand and regional expansion.",
+        "tags": [
+          "Critical operation",
+          "Regional expansion",
+          "Complex integrations"
+        ],
+        "modalTitle": "Commercial platform evolution and regional expansion",
+        "modalIntro": "Involvement in the evolution of core commercial systems used to manage sales, lines, equipment and services within highly complex technical and functional ecosystems, under strong go-to-market pressure and the need for continuous operation.",
+        "context": "Business environments where a central platform concentrated end-to-end sales processes, CRM integrations, service activation, billing and multiple satellite systems. In some cases, these platforms also had to support regional expansion into new countries while coexisting with legacy architectures and partial modernizations.",
+        "challenge": "Maintaining operational continuity on high-demand systems, supporting business transformations with imposed deadlines, and responding to changing requirements, all in contexts where commercial priorities tended to delay technical investments and increase accumulated technical debt.",
+        "intervention": "I led the technical evolution of these platforms within broader business programs, coordinating requirements, integrations and deployments in complex contexts. I supported regulatory changes, regional rollouts, managed mixed architectures, and helped organize the progressive evolution of solutions that could not afford downtime.",
+        "impact": "The platforms supported key business changes, maintained large-scale operations, and extended their reach to new regional contexts, even under time pressure, high functional complexity, and a heterogeneous technology base.",
+        "modalTags": [
+          "Sales & operations",
+          "High availability",
+          "Integrations",
+          "Regional rollout"
+        ]
+      },
+      {
+        "id": "operational-industrialization",
+        "title": "Operational industrialization and client visibility",
+        "summary": "An effective but low-visibility operation, transformed into a more predictable, traceable and goal-aligned model.",
+        "tags": [
+          "Operational governance",
+          "Visibility",
+          "Planning"
+        ],
+        "modalTitle": "Operational industrialization and client visibility",
+        "modalIntro": "Intervention in an operation that technically performed well but lacked sufficient planning, documentation and visibility, creating client uncertainty about progress and alignment with their objectives.",
+        "context": "A team that handled day-to-day needs and performed well operationally, but lacked consistent mechanisms to project work, show progress, anticipate risks, or involve the client early in decisions.",
+        "challenge": "Generating predictability and trust without slowing the team's responsiveness, providing real visibility into what was being worked on, how much each initiative required, and when concrete results could be expected.",
+        "intervention": "I implemented a weekly planning scheme with quarterly projections, periodic reporting of hours and status, increased documentation of changes, and early validations with the client. This transformed the workflow into a more transparent, traceable and shared process.",
+        "impact": "The client gained visibility, predictability and greater peace of mind, alignment with agreed objectives improved, and the team began working within a much more organized framework to uphold commitments, anticipate deviations and resolve issues with less friction.",
+        "modalTags": [
+          "Planning",
+          "Reporting",
+          "Alignment",
+          "Client-team"
+        ]
+      },
+      {
+        "id": "latam-corporate-portfolio",
+        "title": "Comprehensive management of a corporate portfolio in LATAM",
+        "summary": "Multi-application and multi-business portfolio, combining modernization, technical governance, vendors and budget management.",
+        "tags": [
+          "Multi-business portfolio",
+          "Modernization",
+          "IT governance"
+        ],
+        "modalTitle": "Comprehensive management of a corporate portfolio in LATAM",
+        "modalIntro": "Leadership over a regional portfolio of applications supporting various corporate domains, in an environment where vendor solutions and custom developments coexist, with demanding global standards and multiple distributed teams.",
+        "context": "Portfolio of applications from different business areas, with very diverse needs and no clear IT referents on the user side. Additionally, the environment required strict policies on security, accessibility, technology updates, infrastructure and compliance with corporate standards.",
+        "challenge": "Translating vague needs into concrete requirements, coordinating vendors and internal teams, supporting user functional decisions, executing technical modernizations, and at the same time maintaining control over budget, forecast and annual priorities.",
+        "intervention": "I managed the portfolio's evolution by combining functional support for users, leading modernization initiatives for code and infrastructure, coordinating with vendors, economic tracking and ongoing alignment with corporate standards and regional objectives.",
+        "impact": "Portfolio management became clearer, with better alignment between needs and execution, improved technical health of applications, and a stronger foundation to support growth, compliance and continuous evolution initiatives.",
+        "modalTags": [
+          "LATAM portfolio",
+          "Budget & forecasting",
+          "Vendor + custom",
+          "Continuous modernization"
+        ]
+      }
+    ]
+  },
+  "contactSection": {
+    "area": "Contact",
+    "title": "Let's talk",
+    "lead": "If you have an initiative that needs technical clarity, execution alignment, or a stronger foundation to evolve, write to me.",
+    "leadDetail": "I can support definition phases, platform modernization, technical leadership, or the evolution of portfolios and operations.",
+    "allRequired": "All fields are required.",
+    "actions": [
+      {
+        "id": 1,
+        "label": "Email me",
+        "href": "mailto:info@luciotzikas.com",
+        "icon": "mail"
+      },
+      {
+        "id": 2,
+        "label": "Connect on LinkedIn",
+        "href": "https://www.linkedin.com/in/ltzikas",
+        "icon": "linkedin"
+      },
+      {
+        "id": 3,
+        "label": "Chat on WhatsApp",
+        "href": "https://wa.me/5491134133083",
+        "icon": "whatsapp"
+      }
+    ],
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your.email\u0040domain.com"
+      },
+      "company": {
+        "label": "Company or project",
+        "placeholder": "Name of your company or initiative"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Briefly describe the context, what you need to solve and how you think I can help."
+      },
+      "submit": "Send message",
+      "sending": "Sending…",
+      "errors": {
+        "required": "Required field",
+        "invalidEmail": "Enter a valid email"
+      }
+    },
+    "modal": {
+      "close": "Close",
+      "formIncomplete": {
+        "title": "Incomplete form",
+        "message": "Please fill the required fields."
+      },
+      "sent": {
+        "title": "Message sent",
+        "message": "Thanks — I received your message and will reply soon."
+      },
+      "sendFailed": {
+        "title": "Error sending",
+        "message": "Couldn't send via the server. Your email client will open as an alternative."
+      },
+      "networkError": {
+        "title": "Network error",
+        "message": "A network error occurred. Your email client will open as an alternative."
+      }
+    },
+    "mail": {
+      "subject": "Contact from portfolio",
+      "bodyIntro": "I'm contacting you from the portfolio form."
+    }
+  },
+  "footer": {
+    "portfolio": "Portfolio",
+    "top": "Top",
+    "privacy": "Privacy Policy",
+    "terms": "Terms and Conditions"
+  }
+}
