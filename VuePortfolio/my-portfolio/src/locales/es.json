@@ -33,13 +33,31 @@
     "description": "Trabajo con criterio, no con recetas: analizo el contexto, defino una dirección técnica clara y ejecuto con foco en escalabilidad, sostenibilidad y evolución.",
     "stepsTitle": "Pilares de mi enfoque",
     "steps": [
-      { "title": "Contexto", "desc": "Entiendo el problema, las restricciones, la operación actual y los objetivos antes de definir una solución." },
-      { "title": "Dirección técnica", "desc": "Defino arquitectura, alternativas y decisiones tecnológicas con foco en claridad,escalabilidad y sostenibilidad." },
-      { "title": "Ejecución", "desc": "Concreto la implementación con foco en prioridades, coordinación y avance real." },
-      { "title": "Evolución", "desc": "Pienso las soluciones para que puedan mantenerse, crecer e integrarse con el tiempo sin complejidad innecesaria." }
+      {
+        "title": "Contexto",
+        "desc": "Entiendo el problema, las restricciones, la operación actual y los objetivos antes de definir una solución."
+      },
+      {
+        "title": "Dirección técnica",
+        "desc": "Defino arquitectura, alternativas y decisiones tecnológicas con foco en claridad,escalabilidad y sostenibilidad."
+      },
+      {
+        "title": "Ejecución",
+        "desc": "Concreto la implementación con foco en prioridades, coordinación y avance real."
+      },
+      {
+        "title": "Evolución",
+        "desc": "Pienso las soluciones para que puedan mantenerse, crecer e integrarse con el tiempo sin complejidad innecesaria."
+      }
     ],
     "valuesTitle": "Principios de trabajo",
-    "values": ["Criterio antes que tendencia", "Decisiones técnicas claras", "Arquitectura sostenible", "Menos complejidad, más foco", "Ejecución alineada al contexto"]
+    "values": [
+      "Criterio antes que tendencia",
+      "Decisiones técnicas claras",
+      "Arquitectura sostenible",
+      "Menos complejidad, más foco",
+      "Ejecución alineada al contexto"
+    ]
   },
   "skillsSection": {
     "area": "Áreas de aporte",
@@ -82,105 +100,166 @@
     ]
   },
   "experienceSection": {
-  "area": "Trayectoria profesional",
-  "title": "Experiencia",
-  "description": "Trabajo en entornos corporativos complejos, combinando dirección técnica, modernización y liderazgo de equipos.",
-  "cards": [
-    {
-      "title": "Portfolios y operación regional",
-      "summary": "Portfolios integrados a ecosistemas de negocio con alcance regional.",
-      "description": "Trabajé sobre portfolios con alcance regional, articulando continuidad, evolución y mantenimiento dentro de ecosistemas de negocio más amplios.",
-      "bullets": [
-        "Portfolios con alcance LATAM",
-        "Integración con procesos y operaciones críticas",
-        "Coordinación entre necesidades regionales y dirección técnica",
-        "Continuidad y mejora sobre plataformas en uso real"
-      ]
-    },
-    {
-      "title": "Modernización y evolución tecnológica",
-      "summary": "Actualización de plataformas para escalar con mayor solidez.",
-      "description": "Impulsé iniciativas de modernización tecnológica, renovación de componentes y adopción de arquitecturas más sostenibles, preparando plataformas para crecer con mayor eficiencia y capacidad de evolución.",
-      "bullets": [
-        "Modernización de aplicaciones y componentes críticos",
-        "Reducción de deuda técnica",
-        "Adopción de arquitecturas cloud y enfoques más sostenibles",
-        "Preparación para crecimiento y eficiencia operativa"
-      ]
-    },
-    {
-      "title": "Liderazgo técnico y desarrollo de equipos",
-      "summary": "Equipos y disciplinas técnicas alineados a delivery, calidad y desarrollo profesional.",
-      "description": "Lideré equipos y disciplinas técnicas para convertir definiciones en avance real, combinando calidad de entrega, soporte a producción y crecimiento profesional de las personas.",
-      "bullets": [
-        "Coordinación entre análisis, desarrollo, testing y operación",
-        "Alineación entre definición técnica e implementación",
-        "Soporte a producción y foco en calidad de entrega",
-        "Acompañamiento y crecimiento de equipos"
-      ]
-    }
-  ],
-  "seeDetails": "Ver detalle",
-  "journeyTitle": "Recorrido",
-  "journeyPath": [
-    "Technical Lead",
-    "Engineering Lead",
-    "Application Development Manager"
-  ],
-  "journeyDescription": "Proyectos y organizaciones de distintas industrias, con una evolución desde el liderazgo técnico de equipos hacia la gestión de portfolios, la modernización y la dirección de iniciativas.",
-  "baseTitle": "Base profesional:",
-  "baseDescription": "Ingeniería en Informática, complementada con práctica real en arquitectura, delivery y evolución de productos y plataformas."
+    "area": "Trayectoria profesional",
+    "title": "Experiencia",
+    "description": "Trabajo en entornos corporativos complejos, combinando dirección técnica, modernización y liderazgo de equipos.",
+    "cards": [
+      {
+        "title": "Portfolios y operación regional",
+        "summary": "Portfolios integrados a ecosistemas de negocio con alcance regional.",
+        "description": "Trabajé sobre portfolios con alcance regional, articulando continuidad, evolución y mantenimiento dentro de ecosistemas de negocio más amplios.",
+        "bullets": [
+          "Portfolios con alcance LATAM",
+          "Integración con procesos y operaciones críticas",
+          "Coordinación entre necesidades regionales y dirección técnica",
+          "Continuidad y mejora sobre plataformas en uso real"
+        ]
+      },
+      {
+        "title": "Modernización y evolución tecnológica",
+        "summary": "Actualización de plataformas para escalar con mayor solidez.",
+        "description": "Impulsé iniciativas de modernización tecnológica, renovación de componentes y adopción de arquitecturas más sostenibles, preparando plataformas para crecer con mayor eficiencia y capacidad de evolución.",
+        "bullets": [
+          "Modernización de aplicaciones y componentes críticos",
+          "Reducción de deuda técnica",
+          "Adopción de arquitecturas cloud y enfoques más sostenibles",
+          "Preparación para crecimiento y eficiencia operativa"
+        ]
+      },
+      {
+        "title": "Liderazgo técnico y desarrollo de equipos",
+        "summary": "Equipos y disciplinas técnicas alineados a delivery, calidad y desarrollo profesional.",
+        "description": "Lideré equipos y disciplinas técnicas para convertir definiciones en avance real, combinando calidad de entrega, soporte a producción y crecimiento profesional de las personas.",
+        "bullets": [
+          "Coordinación entre análisis, desarrollo, testing y operación",
+          "Alineación entre definición técnica e implementación",
+          "Soporte a producción y foco en calidad de entrega",
+          "Acompañamiento y crecimiento de equipos"
+        ]
+      }
+    ],
+    "seeDetails": "Ver detalle",
+    "journeyTitle": "Recorrido",
+    "journeyPath": [
+      "Technical Lead",
+      "Engineering Lead",
+      "Application Development Manager"
+    ],
+    "journeyDescription": "Proyectos y organizaciones de distintas industrias, con una evolución desde el liderazgo técnico de equipos hacia la gestión de portfolios, la modernización y la dirección de iniciativas.",
+    "baseTitle": "Base profesional:",
+    "baseDescription": "Ingeniería en Informática, complementada con práctica real en arquitectura, delivery y evolución de productos y plataformas."
   },
   "projectsSection": {
-  "area": "Casos representativos",
-  "title": "Casos",
-  "description": "Una selección de casos donde combiné criterio técnico, dirección y ejecución para acompañar operaciones, plataformas y contextos de alta complejidad.",
-  "viewCase": "Ver caso",
-  "context": "Contexto",
-  "challenge": "Desafío",
-  "intervention": "Intervención",
-  "impact": "Impacto",
-  "cases": [
-    {
-      "id": "commercial-platforms",
-      "title": "Evolución de plataformas comerciales y expansión regional",
-      "summary": "Plataformas comerciales integradas a operaciones críticas, acompañando cambios de negocio, alta demanda y expansión regional.",
-      "tags": ["Operación crítica", "Expansión regional", "Integraciones complejas"],
-      "modalTitle": "Evolución de plataformas comerciales y expansión regional",
-      "modalIntro": "Participación en la evolución de sistemas comerciales core utilizados para gestionar ventas, líneas, equipos y servicios, dentro de ecosistemas de alta complejidad técnica y funcional, con fuerte presión de salida al mercado y necesidad de sostener operación continua.",
-      "context": "Entornos de negocio donde una plataforma central concentraba procesos de venta end-to-end, integraciones con CRM, activación de servicios, facturación y múltiples sistemas satélite. En algunos casos, además, estas plataformas debían acompañar expansión regional hacia nuevos países mientras convivían con arquitecturas legacy y modernizaciones parciales.",
-      "challenge": "Sostener continuidad operativa sobre sistemas de alta demanda, acompañar transformaciones del negocio con fechas impuestas y responder a definiciones cambiantes, todo en contextos donde la prioridad comercial tendía a desplazar inversiones técnicas y aumentar deuda acumulada.",
-      "intervention": "Lideré la evolución técnica de estas plataformas dentro de programas más amplios de negocio, coordinando requerimientos, integraciones y despliegues en contextos complejos. Acompañé cambios regulatorios, rollouts regionales, conviví con arquitecturas mixtas y ayudé a ordenar la evolución progresiva de soluciones que no podían detener su operación.",
-      "impact": "Las plataformas acompañaron cambios clave del negocio, sostuvieron operación a escala y extendieron su alcance a nuevos contextos regionales, incluso bajo presión de tiempos, alta complejidad funcional y una base tecnológica heterogénea.",
-      "modalTags": ["Ventas y operación", "Alta disponibilidad", "Integraciones", "Rollout regional"]
-    },
-    {
-      "id": "operational-industrialization",
-      "title": "Industrialización operativa y visibilidad para el cliente",
-      "summary": "Una operación efectiva pero poco visible, transformada en un modelo más predecible, trazable y alineado con objetivos.",
-      "tags": ["Gobernanza operativa", "Visibilidad", "Planificación"],
-      "modalTitle": "Industrialización operativa y visibilidad para el cliente",
-      "modalIntro": "Intervención sobre una operación que técnicamente funcionaba bien, pero que carecía de suficiente formalidad en planificación, documentación y visibilidad, generando incertidumbre en el cliente sobre el avance y el alineamiento con sus objetivos.",
-      "context": "Equipo que resolvía necesidades del día a día y respondía correctamente en lo operativo, pero sin mecanismos consistentes para proyectar trabajo, mostrar avance, anticipar riesgos ni involucrar al cliente de manera temprana en las decisiones.",
-      "challenge": "Generar previsibilidad y confianza sin frenar la capacidad de respuesta del equipo, dando visibilidad real sobre en qué se trabajaba, cuánto demandaba cada iniciativa y cuándo podían esperarse resultados concretos.",
-      "intervention": "Implementé un esquema de planificación semanal con proyección por quarter, reporting periódico de horas y estado, mayor documentación de cambios y validaciones tempranas con el cliente. Eso transformó la dinámica en un proceso más transparente, trazable y compartido.",
-      "impact": "El cliente ganó visibilidad, previsibilidad y mayor tranquilidad, mejoró la alineación con los objetivos acordados y el equipo pasó a trabajar con un marco mucho más ordenado para sostener compromisos, anticipar desvíos y resolver issues con menos fricción.",
-      "modalTags": ["Planificación", "Reporting", "Alineación", "Cliente-equipo"]
-    },
-    {
-      "id": "latam-corporate-portfolio",
-      "title": "Gestión integral de un portfolio corporativo en LATAM",
-      "summary": "Portfolio multi-aplicación y multi-negocio, combinando modernización, gobierno técnico, proveedores y gestión presupuestaria.",
-      "tags": ["Portfolio multi-negocio", "Modernización", "Gobierno IT"],
-      "modalTitle": "Gestión integral de un portfolio corporativo en LATAM",
-      "modalIntro": "Liderazgo sobre un portfolio regional de aplicaciones que soportan distintos dominios corporativos, en un entorno donde conviven soluciones vendor y desarrollos custom, estándares globales exigentes y múltiples equipos distribuidos.",
-      "context": "Portfolio de aplicaciones de distintas áreas de negocio, con necesidades muy diversas y sin referentes IT claros del lado usuario. Además, el entorno exigía políticas estrictas sobre seguridad, accesibilidad, actualización tecnológica, infraestructura y cumplimiento de estándares corporativos.",
-      "challenge": "Traducir necesidades difusas en requerimientos concretos, coordinar proveedores y equipos internos, acompañar decisiones funcionales del usuario, ejecutar modernizaciones técnicas y al mismo tiempo sostener control de budget, forecast y prioridades anuales.",
-      "intervention": "Gestioné la evolución del portfolio combinando acompañamiento funcional al usuario, dirección de iniciativas de modernización de código e infraestructura, coordinación con proveedores, seguimiento económico y alineación permanente con estándares corporativos y objetivos regionales.",
-      "impact": "Se consolidó una gestión más clara del portfolio, con mejor alineación entre necesidades y ejecución, mayor sanidad técnica sobre las aplicaciones y una base más sólida para sostener crecimiento, cumplimiento e iniciativas de evolución continua.",
-      "modalTags": ["Portfolio LATAM", "Budget & forecasting", "Vendor + custom", "Modernización continua"]
-    }
-  ]
+    "area": "Casos representativos",
+    "title": "Casos",
+    "description": "Una selección de casos donde combiné criterio técnico, dirección y ejecución para acompañar operaciones, plataformas y contextos de alta complejidad.",
+    "viewCase": "Ver caso",
+    "context": "Contexto",
+    "challenge": "Desafío",
+    "intervention": "Intervención",
+    "impact": "Impacto",
+    "cases": [
+      {
+        "id": "commercial-platforms",
+        "title": "Evolución de plataformas comerciales y expansión regional",
+        "summary": "Plataformas comerciales integradas a operaciones críticas, acompañando cambios de negocio, alta demanda y expansión regional.",
+        "tags": [
+          "Operación crítica",
+          "Expansión regional",
+          "Integraciones complejas"
+        ],
+        "modalTitle": "Evolución de plataformas comerciales y expansión regional",
+        "modalIntro": "Participación en la evolución de sistemas comerciales core utilizados para gestionar ventas, líneas, equipos y servicios, dentro de ecosistemas de alta complejidad técnica y funcional, con fuerte presión de salida al mercado y necesidad de sostener operación continua.",
+        "context": "Entornos de negocio donde una plataforma central concentraba procesos de venta end-to-end, integraciones con CRM, activación de servicios, facturación y múltiples sistemas satélite. En algunos casos, además, estas plataformas debían acompañar expansión regional hacia nuevos países mientras convivían con arquitecturas legacy y modernizaciones parciales.",
+        "challenge": "Sostener continuidad operativa sobre sistemas de alta demanda, acompañar transformaciones del negocio con fechas impuestas y responder a definiciones cambiantes, todo en contextos donde la prioridad comercial tendía a desplazar inversiones técnicas y aumentar deuda acumulada.",
+        "intervention": "Lideré la evolución técnica de estas plataformas dentro de programas más amplios de negocio, coordinando requerimientos, integraciones y despliegues en contextos complejos. Acompañé cambios regulatorios, rollouts regionales, conviví con arquitecturas mixtas y ayudé a ordenar la evolución progresiva de soluciones que no podían detener su operación.",
+        "impact": "Las plataformas acompañaron cambios clave del negocio, sostuvieron operación a escala y extendieron su alcance a nuevos contextos regionales, incluso bajo presión de tiempos, alta complejidad funcional y una base tecnológica heterogénea.",
+        "modalTags": [
+          "Ventas y operación",
+          "Alta disponibilidad",
+          "Integraciones",
+          "Rollout regional"
+        ]
+      },
+      {
+        "id": "operational-industrialization",
+        "title": "Industrialización operativa y visibilidad para el cliente",
+        "summary": "Una operación efectiva pero poco visible, transformada en un modelo más predecible, trazable y alineado con objetivos.",
+        "tags": ["Gobernanza operativa", "Visibilidad", "Planificación"],
+        "modalTitle": "Industrialización operativa y visibilidad para el cliente",
+        "modalIntro": "Intervención sobre una operación que técnicamente funcionaba bien, pero que carecía de suficiente formalidad en planificación, documentación y visibilidad, generando incertidumbre en el cliente sobre el avance y el alineamiento con sus objetivos.",
+        "context": "Equipo que resolvía necesidades del día a día y respondía correctamente en lo operativo, pero sin mecanismos consistentes para proyectar trabajo, mostrar avance, anticipar riesgos ni involucrar al cliente de manera temprana en las decisiones.",
+        "challenge": "Generar previsibilidad y confianza sin frenar la capacidad de respuesta del equipo, dando visibilidad real sobre en qué se trabajaba, cuánto demandaba cada iniciativa y cuándo podían esperarse resultados concretos.",
+        "intervention": "Implementé un esquema de planificación semanal con proyección por quarter, reporting periódico de horas y estado, mayor documentación de cambios y validaciones tempranas con el cliente. Eso transformó la dinámica en un proceso más transparente, trazable y compartido.",
+        "impact": "El cliente ganó visibilidad, previsibilidad y mayor tranquilidad, mejoró la alineación con los objetivos acordados y el equipo pasó a trabajar con un marco mucho más ordenado para sostener compromisos, anticipar desvíos y resolver issues con menos fricción.",
+        "modalTags": [
+          "Planificación",
+          "Reporting",
+          "Alineación",
+          "Cliente-equipo"
+        ]
+      },
+      {
+        "id": "latam-corporate-portfolio",
+        "title": "Gestión integral de un portfolio corporativo en LATAM",
+        "summary": "Portfolio multi-aplicación y multi-negocio, combinando modernización, gobierno técnico, proveedores y gestión presupuestaria.",
+        "tags": ["Portfolio multi-negocio", "Modernización", "Gobierno IT"],
+        "modalTitle": "Gestión integral de un portfolio corporativo en LATAM",
+        "modalIntro": "Liderazgo sobre un portfolio regional de aplicaciones que soportan distintos dominios corporativos, en un entorno donde conviven soluciones vendor y desarrollos custom, estándares globales exigentes y múltiples equipos distribuidos.",
+        "context": "Portfolio de aplicaciones de distintas áreas de negocio, con necesidades muy diversas y sin referentes IT claros del lado usuario. Además, el entorno exigía políticas estrictas sobre seguridad, accesibilidad, actualización tecnológica, infraestructura y cumplimiento de estándares corporativos.",
+        "challenge": "Traducir necesidades difusas en requerimientos concretos, coordinar proveedores y equipos internos, acompañar decisiones funcionales del usuario, ejecutar modernizaciones técnicas y al mismo tiempo sostener control de budget, forecast y prioridades anuales.",
+        "intervention": "Gestioné la evolución del portfolio combinando acompañamiento funcional al usuario, dirección de iniciativas de modernización de código e infraestructura, coordinación con proveedores, seguimiento económico y alineación permanente con estándares corporativos y objetivos regionales.",
+        "impact": "Se consolidó una gestión más clara del portfolio, con mejor alineación entre necesidades y ejecución, mayor sanidad técnica sobre las aplicaciones y una base más sólida para sostener crecimiento, cumplimiento e iniciativas de evolución continua.",
+        "modalTags": [
+          "Portfolio LATAM",
+          "Budget & forecasting",
+          "Vendor + custom",
+          "Modernización continua"
+        ]
+      }
+    ]
+  },
+  "servicesSection": {
+    "eyebrow": "Propuesta de valor",
+    "title": "Servicios",
+    "lead1": "Me sumo para dar claridad técnica, ordenar iniciativas y acompañar su ejecución",
+    "lead2": "Si necesitás dar claridad a una iniciativa, preparar una plataforma para crecer o acompañar un entorno complejo, hablemos.",
+    "cta": "Conversemos",
+    "items": [
+      {
+        "id": "clarity",
+        "number": "01",
+        "title": "Ordenar y destrabar iniciativas",
+        "description": "Para contextos donde hay demanda, presión y ambigüedad, pero falta una dirección clara para avanzar.",
+        "bullets": [
+          "Priorización técnica y funcional",
+          "Definición de enfoque",
+          "Alineación entre negocio y ejecución"
+        ]
+      },
+      {
+        "id": "modernization",
+        "number": "02",
+        "title": "Modernizar y preparar para escalar",
+        "description": "Para plataformas que necesitan actualizarse, reducir fricción técnica y sostener crecimiento.",
+        "bullets": [
+          "Modernización progresiva",
+          "Reducción de deuda técnica",
+          "Arquitectura y evolución"
+        ]
+      },
+      {
+        "id": "portfolio",
+        "number": "03",
+        "title": "Acompañar portfolios, equipos y entornos complejos",
+        "description": "Para entornos con múltiples aplicaciones, stakeholders y necesidades de coordinación constante.",
+        "bullets": [
+          "Gobierno de iniciativas",
+          "Visibilidad y previsibilidad",
+          "Dirección técnica y seguimiento"
+        ]
+      }
+    ]
   },
   "contactSection": {
     "area": "Contacto",
@@ -189,15 +268,39 @@
     "leadDetail": "Puedo acompañarte en etapas de definición, modernización, dirección técnica o evolución de portfolios y operaciones.",
     "allRequired": "Todos los campos son obligatorios.",
     "actions": [
-      { "id": 1, "label": "Escribirme por email", "href": "mailto:info@luciotzikas.com", "icon": "mail" },
-      { "id": 2, "label": "Conectar por LinkedIn", "href": "https://www.linkedin.com/in/ltzikas", "icon": "linkedin" },
-      { "id": 3, "label": "Hablar por WhatsApp", "href": "https://wa.me/5491134133083", "icon": "whatsapp" }
+      {
+        "id": 1,
+        "label": "Escribirme por email",
+        "href": "mailto:info@luciotzikas.com",
+        "icon": "mail"
+      },
+      {
+        "id": 2,
+        "label": "Conectar por LinkedIn",
+        "href": "https://www.linkedin.com/in/ltzikas",
+        "icon": "linkedin"
+      },
+      {
+        "id": 3,
+        "label": "Hablar por WhatsApp",
+        "href": "https://wa.me/5491134133083",
+        "icon": "whatsapp"
+      }
     ],
     "form": {
       "name": { "label": "Nombre", "placeholder": "Tu nombre" },
-      "email": { "label": "Email", "placeholder": "your.email\u0040domain.com" },
-      "company": { "label": "Empresa o proyecto", "placeholder": "Nombre de tu empresa o iniciativa" },
-      "message": { "label": "Mensaje", "placeholder": "Contame brevemente en qué contexto estás, qué necesitás resolver y en qué creés que te puedo ayudar." },
+      "email": {
+        "label": "Email",
+        "placeholder": "tu.email{'@'}dominio.com"
+      },
+      "company": {
+        "label": "Empresa o proyecto",
+        "placeholder": "Nombre de tu empresa o iniciativa"
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Contame brevemente en qué contexto estás, qué necesitás resolver y en qué creés que te puedo ayudar."
+      },
       "submit": "Enviar mensaje",
       "sending": "Enviando…",
       "errors": {

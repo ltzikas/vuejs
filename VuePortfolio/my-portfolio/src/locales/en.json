@@ -185,33 +185,20 @@
         "id": "operational-industrialization",
         "title": "Operational industrialization and client visibility",
         "summary": "An effective but low-visibility operation, transformed into a more predictable, traceable and goal-aligned model.",
-        "tags": [
-          "Operational governance",
-          "Visibility",
-          "Planning"
-        ],
+        "tags": ["Operational governance", "Visibility", "Planning"],
         "modalTitle": "Operational industrialization and client visibility",
         "modalIntro": "Intervention in an operation that technically performed well but lacked sufficient planning, documentation and visibility, creating client uncertainty about progress and alignment with their objectives.",
         "context": "A team that handled day-to-day needs and performed well operationally, but lacked consistent mechanisms to project work, show progress, anticipate risks, or involve the client early in decisions.",
         "challenge": "Generating predictability and trust without slowing the team's responsiveness, providing real visibility into what was being worked on, how much each initiative required, and when concrete results could be expected.",
         "intervention": "I implemented a weekly planning scheme with quarterly projections, periodic reporting of hours and status, increased documentation of changes, and early validations with the client. This transformed the workflow into a more transparent, traceable and shared process.",
         "impact": "The client gained visibility, predictability and greater peace of mind, alignment with agreed objectives improved, and the team began working within a much more organized framework to uphold commitments, anticipate deviations and resolve issues with less friction.",
-        "modalTags": [
-          "Planning",
-          "Reporting",
-          "Alignment",
-          "Client-team"
-        ]
+        "modalTags": ["Planning", "Reporting", "Alignment", "Client-team"]
       },
       {
         "id": "latam-corporate-portfolio",
         "title": "Comprehensive management of a corporate portfolio in LATAM",
         "summary": "Multi-application and multi-business portfolio, combining modernization, technical governance, vendors and budget management.",
-        "tags": [
-          "Multi-business portfolio",
-          "Modernization",
-          "IT governance"
-        ],
+        "tags": ["Multi-business portfolio", "Modernization", "IT governance"],
         "modalTitle": "Comprehensive management of a corporate portfolio in LATAM",
         "modalIntro": "Leadership over a regional portfolio of applications supporting various corporate domains, in an environment where vendor solutions and custom developments coexist, with demanding global standards and multiple distributed teams.",
         "context": "Portfolio of applications from different business areas, with very diverse needs and no clear IT referents on the user side. Additionally, the environment required strict policies on security, accessibility, technology updates, infrastructure and compliance with corporate standards.",
@@ -223,6 +210,48 @@
           "Budget & forecasting",
           "Vendor + custom",
           "Continuous modernization"
+        ]
+      }
+    ]
+  },
+  "servicesSection": {
+    "eyebrow": "Value proposition",
+    "title": "Services",
+    "lead1": "I bring technical clarity, align initiatives and support execution",
+    "lead2": "If you need clarity on an initiative, to prepare a platform for growth, or to navigate a complex environment, let’s talk.",
+    "cta": "Get in touch",
+    "items": [
+      {
+        "id": "clarity",
+        "number": "01",
+        "title": "Unblock and align initiatives",
+        "description": "For contexts where demand, time pressure and ambiguity exist but there’s no clear technical direction to make progress.",
+        "bullets": [
+          "Technical and functional prioritization",
+          "Definition of approach",
+          "Business-to-delivery alignment"
+        ]
+      },
+      {
+        "id": "modernization",
+        "number": "02",
+        "title": "Modernize and prepare for scale",
+        "description": "For platforms that need updates, reduced technical friction and foundations to support sustainable growth.",
+        "bullets": [
+          "Incremental modernization",
+          "Technical debt reduction",
+          "Architecture and evolution planning"
+        ]
+      },
+      {
+        "id": "portfolio",
+        "number": "03",
+        "title": "Support portfolios, teams and complex landscapes",
+        "description": "For multi-application environments with many stakeholders that require ongoing coordination and governance.",
+        "bullets": [
+          "Initiative governance",
+          "Visibility and predictability",
+          "Technical leadership and follow-up"
         ]
       }
     ]
@@ -260,7 +289,7 @@
       },
       "email": {
         "label": "Email",
-        "placeholder": "your.email\u0040domain.com"
+        "placeholder": "your.email{'@'}domain.com"
       },
       "company": {
         "label": "Company or project",

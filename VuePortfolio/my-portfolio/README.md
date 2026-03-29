@@ -1,6 +1,6 @@
 # My Portfolio
 
-Personal portfolio built with Vue 3, Vite, TypeScript and Tailwind CSS. Light/Dark theme, ES/EN i18n, responsive design, and a unified design system.
+Personal portfolio implemented with Vue 3, TypeScript, Vite and Tailwind CSS. Single-page sections layout, responsive, light/dark theme, ES/EN i18n and accessible-first UI components.
 
 ---
 
@@ -8,160 +8,150 @@ Personal portfolio built with Vue 3, Vite, TypeScript and Tailwind CSS. Light/Da
 
 - Vue 3 (Composition API, `<script setup>`)
 - TypeScript
-- Tailwind CSS with custom design system
-- Dark mode (Tailwind `dark:` + preference persistence)
-- ES/EN internationalization (Vue I18n + persistence)
-- Responsive layout and smooth interactions
-- Consistent NavBar: ThemeToggle, LanguageSelector, SocialMedia
-- Footer always dark with brand accent border
+- Vite dev + build
+- Tailwind CSS v3 with custom tokens and `darkMode: 'class'`
+- Light / Dark theme toggle with persistence (`localStorage` key `theme`)
+- Internationalization (Vue I18n) with ES/EN JSON messages and persisted selection (`localStorage` key `lang`)
+- Sections-based single-page layout (no router used at runtime)
+- Reusable UI atoms: `ThemeToggle`, `LanguageSelector`, `SocialMedia`, `HamburgerIcon`
+- Mocks and simple services for content (`src/mocks`, `src/services`)
+
+---
+
+## Quick Links
+
+- Entry: [src/main.ts](src/main.ts)
+- Translations: [src/locales/es.json](src/locales/es.json), [src/locales/en.json](src/locales/en.json)
+- Services data (mocks): [src/mocks/services.json](src/mocks/services.json)
+- Services component: [src/components/sections/ServicesSection.vue](src/components/sections/ServicesSection.vue)
+- Experience component: [src/components/sections/ExperienceSection.vue](src/components/sections/ExperienceSection.vue)
+- Theme toggle: [src/components/ui/ThemeToggle.vue](src/components/ui/ThemeToggle.vue)
+- Language toggle: [src/components/ui/LanguageSelector.vue](src/components/ui/LanguageSelector.vue)
+- Tailwind config: [tailwind.config.js](tailwind.config.js)
+- Vite config: [vite.config.ts](vite.config.ts)
+- Package metadata: [package.json](package.json)
 
 ---
 
 ## Tech Stack
 
-- Vue 3 + Vite
-- TypeScript
-- Tailwind CSS
-- Vue I18n
+- Vue 3 + TypeScript + Vite
+- Tailwind CSS, PostCSS, Autoprefixer
+- vue-i18n (v9) for localization
+
+> Note: `vue-router` is present in `package.json` but there is no router setup or usage in the current codebase.
 
 ---
 
-## Project Structure
+## Project Structure (relevant)
 
 ```
-my-portfolio/
-├── index.html
-├── package.json
-├── tailwind.config.js
-├── src/
-│   ├── main.ts
-│   ├── App.vue
-│   ├── assets/
-│   │   ├── tailwind.css
-│   │   └── Lucio.JPG
-│   ├── components/
-│   │   ├── layout/
-│   │   │   ├── NavBar.vue
-│   │   │   └── FooterBar.vue
-│   │   ├── sections/
-│   │   │   ├── HeroSection.vue
-│   │   │   ├── AboutSection.vue
-│   │   │   ├── SkillsSection.vue
-│   │   │   ├── ExperienceSection.vue
-│   │   │   ├── ProjectsSection.vue
-│   │   │   ├── ServicesSection.vue
-│   │   │   ├── EducationSection.vue
-│   │   │   └── ContactSection.vue
-│   │   └── ui/
-│   │       ├── ThemeToggle.vue
-│   │       ├── LanguageSelector.vue
-│   │       ├── SocialMedia.vue
-│   │       └── HamburgerIcon.vue
-│   ├── composables/
-│   │   └── useSectionBackground.ts
-│   ├── locales/
-│   │   ├── en.json
-│   │   └── es.json
-│   ├── mocks/
-│   │   ├── projects.json
-│   │   └── services.json
-│   ├── services/
-│   │   ├── projectsApi.ts
-│   │   └── servicesApi.ts
-│   └── pages/                 # Legacy (no router). Kept for reference.
-└── public/
-    └── vite.svg
+src/
+├─ main.ts
+├─ App.vue
+├─ assets/
+├─ components/
+│  ├─ sections/
+│  └─ ui/
+├─ locales/
+│  ├─ es.json
+│  └─ en.json
+├─ mocks/
+└─ services/
 ```
-
-Note: The app is a single-page layout using sections. The folder `src/pages/` is legacy and not used by the current build.
-
----
-
-## Design System
-
-- Colors (semantic):
-  - primary: blue-600 (light) / blue-900 (dark)
-  - background: slate-100 (light) / slate-950 (dark)
-  - surface: white (light) / slate-800 (dark)
-  - text: slate-800 (light) / slate-50 (dark)
-- Pattern: zebra alternation between surface/background across sections.
-- Components use Tailwind classes directly; dynamic classes only for animations/positions.
-
----
-
-## Theme Strategy (Dark/Light)
-
-- Styling: Tailwind `dark:` classes (no JS-based styling).
-- Persistence: `localStorage.getItem('theme')` to remember user choice.
-- Toggle:
-  - Toggles the `dark` class on `<html>`.
-  - Saves preference in `localStorage`.
-- Optional: prevent flash of wrong theme by adding a tiny inline script in `index.html` to set `dark` before CSS loads.
-
----
-
-## Internationalization
-
-- Vue I18n with ES/EN.
-- User preference persisted in `localStorage` as `lang`.
-- LanguageSelector UI mirrors ThemeToggle styles.
 
 ---
 
 ## Setup
 
-Prerequisites: Node 18+
+Prerequisites: Node 18+ recommended
+
+Install dependencies:
 
 ```bash
-# Install
 npm install
+```
 
-# Dev
+Development server:
+
+```bash
 npm run dev
+```
 
-# Build
+Build production:
+
+```bash
 npm run build
+```
 
-# Preview production
+Preview production build:
+
+```bash
 npm run preview
 ```
 
-Recommended VS Code extensions:
-- Vue - Official (Volar)
+---
+
+## How i18n is implemented
+
+- Translations are JSON files under `src/locales/` and are imported in `src/main.ts` and passed to `createI18n`.
+- `createI18n` is configured with `legacy: false` (Composition API mode). Initial locale is read from `localStorage.getItem('lang') || 'es'` with fallback to `'en'`.
+- Templates use `$t()` for scalar strings and `$tm()` (message-typed access) for arrays/objects used directly in templates (see Services and Experience sections).
+- To add a language or update copy:
+  - Edit both `src/locales/es.json` and `src/locales/en.json`, keeping the same key structure.
+  - For large translation sets consider switching to dynamic imports to reduce initial bundle size.
 
 ---
 
-## Scripts (package.json)
+## Theme & Persistence
 
-- dev: start Vite dev server
-- build: Vite build
-- preview: preview dist
-
----
-
-## Accessibility & UX
-
-- Focus-visible rings on interactive elements
-- Hover rings + subtle scale on toggles
-- High-contrast palette in both themes
+- Theme uses Tailwind class-based dark mode. On startup `main.ts` toggles the `dark` class on `<html>` based on `localStorage.theme` or OS preference.
+- The `ThemeToggle` component updates `localStorage.theme` and toggles the `dark` class.
+- Optional improvement: Add a minimal inline script in `index.html` to set the initial theme before CSS loads to avoid FOUC.
 
 ---
 
-## SEO (optional suggestions)
+## Components & Patterns
 
-- Add meta description and Open Graph tags in `index.html`.
-- Set `theme-color` for light/dark.
-- Add `public/robots.txt` and a `sitemap.xml` if deployed.
-
----
-
-## Notes
-
-- No Vue Router needed; all content lives in sections on the same page.
-- API/service files and mocks are ready to wire projects/services content.
+- Sections are small, focused components in `src/components/sections/`.
+- UI atoms live in `src/components/ui/` and are intentionally minimal and reusable.
+- Data for lists (projects, services) can come from `src/mocks/*.json` or be wired to real APIs via `src/services/*Api.ts`.
+- Use `$tm('path.to.array')` in templates when rendering arrays stored in translation files.
 
 ---
 
-## License
+## Development notes & suggestions
 
-© 2025 Lucio Tzikas. All rights reserved.
+- Remove unused dependency `vue-router` from `package.json` if routing won't be introduced.
+- Keep translations in sync between `es.json` and `en.json`. Use the same keys and structure.
+- Consider converting locales to lazy-loaded modules if the number/size of translations grows.
+- Add basic linting/CI for `npm run build` and lint checks on PRs.
+- There are no automated tests configured — consider adding unit tests for critical components and a basic visual regression or E2E check.
+
+---
+
+## Accessibility
+
+- Components include `aria-label` where relevant and use `focus-visible` rings.
+- Continue adding semantic roles and aria attributes for interactive widgets as the app evolves.
+
+---
+
+## Deployment
+
+- Any static host for SPAs works (Vercel, Netlify, GitHub Pages, Azure Static Web Apps). Build output in `dist/`.
+- For SEO and social sharing, add meta tags and Open Graph tags in `index.html`, and consider adding `robots.txt` and `sitemap.xml` to `public/`.
+
+---
+
+## How to extend
+
+- Add a new section: create `src/components/sections/MySection.vue` and import it into `App.vue`.
+- Add new language: add `src/locales/<lang>.json` and include it in `main.ts` messages (or implement dynamic import).
+- Replace mocks with a real backend: implement API wrappers in `src/services/` and update the components to call them.
+
+---
+
+## License & Author
+
+© 2026 Lucio Tzikas. All rights reserved.
