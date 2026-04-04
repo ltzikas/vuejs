@@ -8,7 +8,6 @@
     ]"
     :style="heroSectionStyle"
   >
-    <!-- Fondos decorativos -->
     <div aria-hidden="true" class="pointer-events-none absolute inset-0">
       <div
         class="absolute left-1/2 top-[-10%] h-[60vw] w-[60vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(56,189,248,0.08)_0%,_rgba(56,189,248,0)_60%)] dark:bg-[radial-gradient(circle,_rgba(56,189,248,0.12)_0%,_rgba(56,189,248,0)_60%)]"
@@ -34,11 +33,9 @@
           <div
             class="flex flex-col md:grid md:gap-12 md:grid-cols-2 md:items-center"
           >
-            <!-- Texto -->
             <div
               class="order-2 md:order-1 text-center md:text-left px-5 py-4 md:px-0 md:py-0"
             >
-              <!-- Eyebrow -->
               <div
                 class="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs border-slate-200 bg-slate-100 text-slate-600 dark:border-white/10 dark:bg-white/10 dark:text-slate-300"
               >
@@ -48,7 +45,6 @@
                 {{ $t("hero.available") }}
               </div>
 
-              <!-- Title -->
               <h1
                 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05] sm:leading-tight tracking-tight"
               >
@@ -71,7 +67,6 @@
                 </span>
               </h1>
 
-              <!-- Typed line -->
               <p
                 class="mt-1 md:mt-4 mb-1 inline-block min-h-[2rem] px-1 py-0.5 rounded-lg bg-cyan-50/60 dark:bg-cyan-900/30 border border-cyan-100 dark:border-cyan-800 font-mono text-sm sm:text-base text-cyan-700 dark:text-cyan-200 tracking-wide transition-all duration-400 shadow"
               >
@@ -81,14 +76,12 @@
                 ></span>
               </p>
 
-              <!-- Copy -->
               <p
                 class="mt-1 md:mt-3 text-sm md:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto md:mx-0 md:whitespace-pre-line"
               >
                 {{ $t("hero.description") }}
               </p>
 
-              <!-- CTAs -->
               <div
                 class="mt-2 md:mt-8 flex flex-wrap items-center justify-center md:justify-start gap-3"
               >
@@ -131,7 +124,6 @@
                   </svg>
                 </a>
               </div>
-              <!-- Stats -->
               <dl
                 class="hidden md:grid mt-6 grid-cols-3 gap-4 max-w-md md:mx-0"
               >
@@ -174,7 +166,6 @@
               </dl>
             </div>
 
-            <!-- Foto -->
             <div
               :style="photoContainerStyle"
               class="order-1 md:order-2 relative md:h-auto shrink-0 md:shrink overflow-hidden md:overflow-visible md:mx-auto md:max-w-none"
@@ -186,7 +177,6 @@
                   :style="imageStyle"
                   class="w-full object-top max-w-none md:max-w-md rounded-b-3xl md:rounded-3xl ring-0 md:ring-2 md:ring-slate-200 md:shadow-[0_10px_40px_-10px_rgba(56,189,248,0.35)] md:dark:ring-white/10 opacity-60 md:opacity-100"
                 />
-                <!-- Gradient fade photo → text (mobile only) -->
                 <div
                   aria-hidden="true"
                   class="md:hidden absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white dark:from-slate-900 to-transparent pointer-events-none"
@@ -254,8 +244,6 @@
       </div>
       <!-- /animated-div -->
     </div>
-    <!-- /sticky-viewport -->
-    <!-- Overlay de ruido sutil -->
     <div
       aria-hidden="true"
       class="pointer-events-none absolute inset-0 opacity-[0.03] mix-blend-soft-light bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>')]"
@@ -268,12 +256,9 @@ import { ref, computed, onMounted, onBeforeUnmount, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { useSectionBackground } from "@/composables/useSectionBackground";
 
-// Imagen de perfil
 const photoUrl = new URL("@/assets/Lucio.JPG", import.meta.url).href;
-// Fondo decorativo
 const { backgrounds } = useSectionBackground();
 
-// Scroll-reveal stats + photo shrink (mobile only)
 const sectionRef = ref<HTMLElement | null>(null);
 const statsRef = ref<HTMLElement | null>(null);
 const innerOffset = ref(0);
@@ -283,37 +268,49 @@ const statsHeight = ref(0);
 const photoStartPx = ref(0);
 const photoEndPx = ref(0);
 
-// Keep the scroll range stable, but let the section shrink by the same
-// amount the photo has already closed. This removes the blank area without
-// feeding the animation back into its own scroll math.
-const heroSectionStyle = computed(() => {
-  if (!isMobile.value) return {};
-  const vh = window.innerHeight;
-  const hiddenPhoto = Math.max(0, photoStartPx.value - currentPhotoPx.value);
-  const shrinkGain = 1.4;
-  const minHeight = vh * 0.15;
-  const height = Math.max(
-    minHeight,
-    Math.round(vh + statsHeight.value - hiddenPhoto * shrinkGain),
-  );
-  return { height: `${height}px` };
-});
-
+const MOBILE_BREAKPOINT = 768;
 const PHOTO_START_VH = 0.46;
 const PHOTO_END_VH = 0.2;
+const HERO_SHRINK_GAIN = 1.4;
+const HERO_MIN_HEIGHT_RATIO = 0.15;
+const MOBILE_ANCHOR_EXTRA_OFFSET = 12;
+const DESKTOP_ANCHOR_EXTRA_OFFSET = 16;
 
-// Photo container keeps a fixed initial height (photoStartPx). The <img>
-// inside is absolutely positioned and its computed height interpolates
-// between start and end. This lets us animate the visible photo size
-// without causing layout reflows for the rest of the content.
-// Compute a current interpolated photo height (px) and apply it
-// to the container so the rest of the content flows up with the image.
-const currentPhotoPx = computed(() => {
-  if (!isMobile.value || photoStartPx.value === 0) return 0;
-  const vh = window.innerHeight;
+let resizeObserver: ResizeObserver | undefined;
+let debouncedResizeHandler: ((...a: any[]) => void) | undefined;
+
+const getViewportHeight = () => window.innerHeight;
+const clamp = (value: number, min: number, max: number) =>
+  Math.max(min, Math.min(value, max));
+
+function computeHeroHeight(viewportHeight: number, hiddenPhoto: number) {
+  const minHeight = viewportHeight * HERO_MIN_HEIGHT_RATIO;
+  return Math.max(
+    minHeight,
+    Math.round(
+      viewportHeight + statsHeight.value - hiddenPhoto * HERO_SHRINK_GAIN,
+    ),
+  );
+}
+
+function getCurrentPhotoHeight() {
+  const vh = getViewportHeight();
   const start = photoStartPx.value;
   const end = photoEndPx.value || Math.round(vh * PHOTO_END_VH);
   return Math.round(start - (start - end) * scrollProg.value);
+}
+
+const heroSectionStyle = computed(() => {
+  if (!isMobile.value) return {};
+  const vh = getViewportHeight();
+  const hiddenPhoto = Math.max(0, photoStartPx.value - currentPhotoPx.value);
+  const height = computeHeroHeight(vh, hiddenPhoto);
+  return { height: `${height}px` };
+});
+
+const currentPhotoPx = computed(() => {
+  if (!isMobile.value || photoStartPx.value === 0) return 0;
+  return getCurrentPhotoHeight();
 });
 
 const photoContainerStyle = computed(() => {
@@ -325,8 +322,6 @@ const photoContainerStyle = computed(() => {
   };
 });
 
-// Image takes full height of the container. The container transition
-// drives layout so the content below moves up as a block.
 const imageStyle = computed((): Record<string, string> => {
   if (!isMobile.value || photoStartPx.value === 0) return {};
   return {
@@ -344,14 +339,9 @@ const animStyle = computed(() => ({
 
 function getCollapsedHeroHeight() {
   if (!isMobile.value) return sectionRef.value?.offsetHeight ?? 0;
-  const vh = window.innerHeight;
-  const shrinkGain = 1.4;
-  const minHeight = vh * 0.15;
+  const vh = getViewportHeight();
   const totalPhotoShrink = Math.max(0, photoStartPx.value - photoEndPx.value);
-  return Math.max(
-    minHeight,
-    Math.round(vh + statsHeight.value - totalPhotoShrink * shrinkGain),
-  );
+  return computeHeroHeight(vh, totalPhotoShrink);
 }
 
 function scrollToAnchor(targetId: string) {
@@ -360,7 +350,10 @@ function scrollToAnchor(targetId: string) {
 
   const nav = document.querySelector("nav");
   const navHeight = nav instanceof HTMLElement ? nav.offsetHeight : 0;
-  const extraOffset = window.innerWidth < 768 ? 12 : 16;
+  const extraOffset =
+    window.innerWidth < MOBILE_BREAKPOINT
+      ? MOBILE_ANCHOR_EXTRA_OFFSET
+      : DESKTOP_ANCHOR_EXTRA_OFFSET;
 
   const currentHeroHeight = sectionRef.value?.offsetHeight ?? 0;
   const collapsedHeroHeight = getCollapsedHeroHeight();
@@ -383,17 +376,17 @@ function scrollToAnchor(targetId: string) {
 function measureStats() {
   statsHeight.value = statsRef.value?.offsetHeight ?? 0;
   // compute photo px values based on current viewport
-  const vh = window.innerHeight;
+  const vh = getViewportHeight();
   photoStartPx.value = Math.round(vh * PHOTO_START_VH);
   photoEndPx.value = Math.round(vh * PHOTO_END_VH);
 }
 
 function updateMobile() {
-  isMobile.value = window.innerWidth < 768;
+  isMobile.value = window.innerWidth < MOBILE_BREAKPOINT;
 }
 
 function handleScroll() {
-  if (!sectionRef.value || window.innerWidth >= 768) {
+  if (!sectionRef.value || window.innerWidth >= MOBILE_BREAKPOINT) {
     innerOffset.value = 0;
     scrollProg.value = 0;
     return;
@@ -403,22 +396,17 @@ function handleScroll() {
     -sectionRef.value.getBoundingClientRect().top,
   );
   const maxOffset = statsHeight.value;
-  const clamped = Math.max(0, Math.min(scrolledPast, maxOffset));
+  const clamped = clamp(scrolledPast, 0, maxOffset);
   innerOffset.value = Math.round(clamped);
   scrollProg.value = maxOffset > 0 ? clamped / maxOffset : 0;
 }
 
-// Typed effect con i18n
 const { tm, locale } = useI18n();
 const typedText = ref("");
 let typingTimer: number | undefined;
 
 function phrases() {
-  // Frases leídas desde i18n
   const arr = tm("hero.typed") as unknown as string[];
-
-  // Si $t no devuelve array, usa fallback local:
-
   return arr;
 }
 
@@ -460,7 +448,6 @@ function stopTyping() {
   }
 }
 
-// Debounce helper for expensive event handlers (resize)
 function debounce<T extends (...a: any[]) => void>(fn: T, wait = 150) {
   let t: number | undefined;
   return (...args: Parameters<T>) => {
@@ -473,40 +460,31 @@ onMounted(() => {
   startTyping();
   updateMobile();
   measureStats();
-  // ResizeObserver to react to viewport / layout changes
-  const ro = new ResizeObserver(() => {
+  resizeObserver = new ResizeObserver(() => {
     updateMobile();
     measureStats();
     handleScroll();
   });
-  ro.observe(document.documentElement);
-  if (sectionRef.value) ro.observe(sectionRef.value);
-  if (statsRef.value) ro.observe(statsRef.value);
+  resizeObserver.observe(document.documentElement);
+  if (sectionRef.value) resizeObserver.observe(sectionRef.value);
+  if (statsRef.value) resizeObserver.observe(statsRef.value);
   window.addEventListener("scroll", handleScroll, { passive: true });
-  const debouncedResize = debounce(() => {
+  debouncedResizeHandler = debounce(() => {
     updateMobile();
     measureStats();
     handleScroll();
   }, 150);
-  window.addEventListener("resize", debouncedResize);
-  // save debounced resize for cleanup
-  (sectionRef as any)._debouncedResize = debouncedResize;
-  // save observer for cleanup
-  (sectionRef as any)._ro = ro;
+  window.addEventListener("resize", debouncedResizeHandler);
 });
+
 onBeforeUnmount(() => {
   stopTyping();
   window.removeEventListener("scroll", handleScroll);
-  const dr = (sectionRef as any)._debouncedResize as
-    | ((...a: any[]) => void)
-    | undefined;
-  if (dr) window.removeEventListener("resize", dr);
-  // disconnect ResizeObserver
-  try {
-    const ro = (sectionRef as any)._ro as ResizeObserver | undefined;
-    if (ro) ro.disconnect();
-  } catch (e) {
-    // ignore
+  if (debouncedResizeHandler) {
+    window.removeEventListener("resize", debouncedResizeHandler);
+  }
+  if (resizeObserver) {
+    resizeObserver.disconnect();
   }
 });
 watch(locale, () => startTyping());
