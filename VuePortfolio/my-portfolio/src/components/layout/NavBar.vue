@@ -1,22 +1,24 @@
 <template>
   <nav
     :class="[
-      'fixed top-0 left-0 w-full z-50 py-1 flex justify-between items-center px-4 shadow-md transition-all duration-300',
-      scrolled 
-        ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md' 
+      'fixed top-0 left-0 w-full z-50 flex justify-between items-center py-0.5 md:py-1 px-3 md:px-4 shadow-md transition-all duration-300',
+      scrolled
+        ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md'
         : 'bg-white dark:bg-slate-900',
     ]"
   >
     <!-- Logo -->
-     <div class="hidden md:block">
+    <div class="hidden md:block">
       <BrandLogo />
-     </div>
-    
-    <ul class="hidden md:flex justify-center gap-8 list-none m-0 p-0">
+    </div>
+
+    <ul class="hidden md:flex justify-center gap-6 md:gap-8 list-none m-0 p-0">
       <li v-for="link in links" :key="link.to">
-        <a :href="link.to" class="block text-lg text-slate-700 dark:text-slate-300 px-3 py-2 rounded hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 transition-colors">{{
-          $t(link.label)
-        }}</a>
+        <a
+          :href="link.to"
+          class="block text-base md:text-lg px-2 md:px-3 text-slate-700 dark:text-slate-300 py-2 rounded hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 transition-colors"
+          >{{ $t(link.label) }}</a
+        >
       </li>
     </ul>
     <HamburgerIcon
@@ -24,7 +26,7 @@
       @toggle="menuOpen = !menuOpen"
       aria-label="Abrir menú"
     />
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-2 md:gap-3">
       <SocialMedia />
       <LanguageSelector />
       <ThemeToggle />
@@ -37,7 +39,7 @@
     @click.self="menuOpen = false"
   >
     <div
-      class="absolute top-0 right-0 w-3/4 max-w-xs h-full bg-white dark:bg-background-dark shadow-lg p-6 flex flex-col"
+      class="absolute top-0 right-0 w-3/4 max-w-xs h-full bg-white dark:bg-background-dark shadow-lg p-4 flex flex-col"
     >
       <button
         class="self-end mb-6 text-2xl text-slate-900 dark:text-slate-100"
@@ -50,7 +52,7 @@
         <li v-for="link in links" :key="link.to">
           <a
             :href="link.to"
-            class="block text-lg text-slate-700 dark:text-slate-300 px-3 py-2 rounded hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 transition-colors"
+            class="block text-base md:text-lg px-2 md:px-3 text-slate-700 dark:text-slate-300 py-2 rounded hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 transition-colors"
             @click="menuOpen = false"
           >
             {{ $t(link.label) }}
