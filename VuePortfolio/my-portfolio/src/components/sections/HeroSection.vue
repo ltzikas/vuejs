@@ -2,10 +2,7 @@
   <section
     ref="sectionRef"
     id="hero"
-    :class="[
-      backgrounds.hero,
-      'relative overflow-hidden flex flex-col md:h-auto md:flex md:items-center',
-    ]"
+    :class="[backgrounds.hero, sectionClasses]"
     :style="heroSectionStyle"
   >
     <div aria-hidden="true" class="pointer-events-none absolute inset-0">
@@ -243,6 +240,26 @@
         </dl>
       </div>
       <!-- /animated-div -->
+
+      <div
+        aria-hidden="true"
+        class="md:hidden absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none"
+        :style="scrollCueStyle"
+      >
+        <svg
+          class="w-8 h-8 text-slate-400 dark:text-slate-500 animate-bounce"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+        >
+          <path
+            d="M6 9l6 6 6-6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
     </div>
     <div
       aria-hidden="true"
@@ -257,7 +274,7 @@ import { useI18n } from "vue-i18n";
 import { useSectionBackground } from "@/composables/useSectionBackground";
 
 const photoUrl = new URL("@/assets/Lucio.JPG", import.meta.url).href;
-const { backgrounds } = useSectionBackground();
+const { backgrounds, sectionClasses } = useSectionBackground();
 
 const sectionRef = ref<HTMLElement | null>(null);
 const statsRef = ref<HTMLElement | null>(null);
@@ -335,6 +352,11 @@ const imageStyle = computed((): Record<string, string> => {
 
 const animStyle = computed(() => ({
   transform: `translateY(-${innerOffset.value}px)`,
+}));
+
+const scrollCueStyle = computed(() => ({
+  opacity: Math.max(0, 1 - scrollProg.value * 6),
+  transition: "opacity 200ms ease",
 }));
 
 function getCollapsedHeroHeight() {

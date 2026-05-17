@@ -1,9 +1,9 @@
 <template>
-  <section id="services" class="py-24 bg-slate-50 dark:bg-slate-800">
+  <section id="services" :class="[backgrounds.services, sectionClasses]">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-12 xl:grid-cols-[0.95fr_1.25fr]">
         <!-- Columna izquierda -->
-        <div class="xl:sticky xl:top-28 xl:self-start">
+        <div class="xl:sticky xl:top-28 xl:self-start" v-reveal>
           <p
             class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-400"
           >
@@ -42,8 +42,9 @@
         <!-- Columna derecha -->
         <div class="space-y-6">
           <article
-            v-for="item in $tm('servicesSection.items')"
+            v-for="(item, idx) in $tm('servicesSection.items')"
             :key="item.id"
+            v-reveal="Number(idx) * 80"
             class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:hover:border-cyan-300"
           >
             <div
@@ -87,3 +88,9 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { useSectionBackground } from "@/composables/useSectionBackground";
+
+const { backgrounds, sectionClasses } = useSectionBackground();
+</script>
