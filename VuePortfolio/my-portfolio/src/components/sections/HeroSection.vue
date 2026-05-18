@@ -2,7 +2,10 @@
   <section
     ref="sectionRef"
     id="hero"
-    :class="[backgrounds.hero, sectionClasses]"
+    :class="[
+      backgrounds.hero,
+      'relative overflow-hidden flex flex-col md:h-auto md:flex md:items-center',
+    ]"
     :style="heroSectionStyle"
   >
     <div aria-hidden="true" class="pointer-events-none absolute inset-0">
@@ -128,7 +131,7 @@
                   class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5"
                 >
                   <dd
-                    class="text-2xl font-semibold text-slate-900 dark:text-slate-100"
+                    class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-400 dark:to-indigo-400"
                   >
                     +15
                   </dd>
@@ -140,7 +143,7 @@
                   class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5"
                 >
                   <dd
-                    class="text-2xl font-semibold text-slate-900 dark:text-slate-100"
+                    class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-400 dark:to-indigo-400"
                   >
                     +20
                   </dd>
@@ -152,7 +155,7 @@
                   class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5"
                 >
                   <dd
-                    class="text-2xl font-semibold text-slate-900 dark:text-slate-100"
+                    class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-400 dark:to-indigo-400"
                   >
                     +5
                   </dd>
@@ -274,7 +277,7 @@ import { useI18n } from "vue-i18n";
 import { useSectionBackground } from "@/composables/useSectionBackground";
 
 const photoUrl = new URL("@/assets/Lucio.JPG", import.meta.url).href;
-const { backgrounds, sectionClasses } = useSectionBackground();
+const { backgrounds } = useSectionBackground();
 
 const sectionRef = ref<HTMLElement | null>(null);
 const statsRef = ref<HTMLElement | null>(null);

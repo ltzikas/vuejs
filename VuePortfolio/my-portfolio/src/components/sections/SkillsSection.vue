@@ -3,6 +3,10 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <!-- Header -->
       <div class="max-w-3xl" v-reveal>
+        <div
+          aria-hidden="true"
+          class="mb-4 w-8 h-[3px] rounded-full bg-gradient-to-r from-cyan-400 to-indigo-400"
+        ></div>
         <p
           class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-300"
         >
@@ -24,7 +28,7 @@
           v-for="(card, i) in $tm('skillsSection.cards')"
           :key="i"
           v-reveal="i * 80"
-          class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-white/5 hover:-translate-y-1 hover:border-cyan-400 dark:hover:border-cyan-300 hover:shadow-lg transition-all duration-300"
+          class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-white/5 hover:-translate-y-1 hover:border-cyan-400 dark:hover:border-cyan-300 hover:shadow-lg hover:shadow-cyan-200/50 dark:hover:shadow-cyan-900/40 transition-all duration-300"
         >
           <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-100">
             {{ card.title }}
@@ -37,7 +41,7 @@
 
       <!-- Base tecnológica -->
       <div
-        class="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-5 md:p-6 dark:border-white/10 dark:bg-white/5"
+        class="mt-8 rounded-3xl border border-cyan-100 bg-gradient-to-br from-cyan-50/80 to-indigo-50/80 p-5 md:p-6 dark:border-cyan-900/40 dark:from-cyan-950/30 dark:to-indigo-950/30"
         v-reveal="200"
       >
         <h3

@@ -3,6 +3,10 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <!-- Header -->
       <div class="max-w-4xl" v-reveal>
+        <div
+          aria-hidden="true"
+          class="mb-4 w-8 h-[3px] rounded-full bg-gradient-to-r from-cyan-400 to-indigo-400"
+        ></div>
         <p
           class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400"
         >
@@ -24,7 +28,7 @@
           v-for="(item, idx) in $tm('projectsSection.cases')"
           :key="item.id"
           v-reveal="Number(idx) * 80"
-          class="flex flex-col rounded-3xl border border-slate-200 bg-white p-5 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:hover:border-cyan-300"
+          class="flex flex-col rounded-3xl border border-slate-200 bg-white p-5 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-200/50 dark:border-white/10 dark:bg-white/5 dark:hover:border-cyan-300 dark:hover:shadow-cyan-900/40"
         >
           <article class="flex h-full flex-col">
             <h3
@@ -41,7 +45,7 @@
               <span
                 v-for="tag in item.tags"
                 :key="tag"
-                class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-600 dark:border-white/10 dark:bg-white/10 dark:text-slate-300"
+                class="rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1.5 text-sm font-medium text-cyan-700 dark:border-cyan-800/60 dark:bg-cyan-900/20 dark:text-cyan-300"
               >
                 {{ tag }}
               </span>

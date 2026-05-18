@@ -3,8 +3,12 @@
     <div class="mx-auto max-w-7xl px-6">
       <!-- Header -->
       <header class="max-w-3xl" v-reveal>
+        <div
+          aria-hidden="true"
+          class="mb-4 w-8 h-[3px] rounded-full bg-gradient-to-r from-cyan-400 to-indigo-400"
+        ></div>
         <p
-          class="mt-2 text-sm font-semibold tracking-[0.18em] uppercase text-slate-400 dark:text-slate-300"
+          class="text-sm font-semibold tracking-[0.18em] uppercase text-slate-400 dark:text-slate-300"
         >
           {{ $t("approachSection.title") }}
         </p>
@@ -29,8 +33,13 @@
           v-for="(step, i) in $tm('approachSection.steps')"
           :key="i"
           v-reveal="Number(i) * 80"
-          class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-white/5 hover:-translate-y-1 hover:border-cyan-400 dark:hover:border-cyan-300 hover:shadow-lg transition-all duration-300"
+          class="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-white/5 hover:-translate-y-1 hover:border-cyan-400 dark:hover:border-cyan-300 hover:shadow-lg hover:shadow-cyan-200/50 dark:hover:shadow-cyan-900/40 transition-all duration-300"
         >
+          <span
+            aria-hidden="true"
+            class="pointer-events-none absolute top-3 right-4 text-6xl font-black leading-none select-none text-slate-100 dark:text-white/[0.04]"
+            >{{ (Number(i) + 1).toString().padStart(2, "0") }}</span
+          >
           <div class="flex items-start gap-3">
             <div>
               <h3 class="font-semibold text-slate-900 dark:text-slate-100">

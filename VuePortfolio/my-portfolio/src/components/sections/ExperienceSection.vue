@@ -2,6 +2,10 @@
   <section id="experience" :class="[backgrounds.experience, sectionClasses]">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="max-w-4xl" v-reveal>
+        <div
+          aria-hidden="true"
+          class="mb-4 w-8 h-[3px] rounded-full bg-gradient-to-r from-cyan-400 to-indigo-400"
+        ></div>
         <p
           class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400"
         >
@@ -23,8 +27,12 @@
           v-for="(item, idx) in $tm('experienceSection.cards')"
           :key="idx"
           v-reveal="Number(idx) * 80"
-          class="flex flex-col rounded-3xl border border-slate-200 bg-white p-5 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 dark:border-white/10 dark:bg-white/5 dark:hover:border-cyan-300 hover:shadow-lg"
+          class="group relative overflow-hidden flex flex-col rounded-3xl border border-slate-200 bg-white p-5 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 dark:border-white/10 dark:bg-white/5 dark:hover:border-cyan-300 hover:shadow-lg hover:shadow-cyan-200/50 dark:hover:shadow-cyan-900/40"
         >
+          <div
+            aria-hidden="true"
+            class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-400 to-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          ></div>
           <h3 class="text-lg font-semibold text-slate-950 dark:text-slate-100">
             {{ item.title }}
           </h3>

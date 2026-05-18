@@ -4,16 +4,22 @@
       <div class="grid grid-cols-1 gap-12 xl:grid-cols-[0.9fr_1.1fr]">
         <!-- Columna izquierda -->
         <div class="xl:pr-8" v-reveal>
+          <div
+            aria-hidden="true"
+            class="mb-4 w-8 h-[3px] rounded-full bg-gradient-to-r from-cyan-400 to-indigo-400"
+          ></div>
           <p
             class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-400"
           >
             {{ $t("contactSection.area") }}
           </p>
 
-          <h2
-            class="mt-4 text-4xl font-bold tracking-tight text-slate-950 md:text-5xl dark:text-slate-100"
-          >
-            {{ $t("contactSection.title") }}
+          <h2 class="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+            <span
+              class="bg-gradient-to-r from-slate-900 via-slate-700 to-cyan-600 bg-clip-text text-transparent dark:from-slate-100 dark:via-slate-300 dark:to-cyan-300"
+            >
+              {{ $t("contactSection.title") }}
+            </span>
           </h2>
 
           <p
@@ -66,7 +72,7 @@
 
         <!-- Columna derecha: formulario -->
         <div
-          class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm md:p-10 dark:border-white/10 dark:bg-white/5"
+          class="rounded-[2rem] border border-slate-200 border-t-2 border-t-cyan-300 bg-white p-8 shadow-sm md:p-10 dark:border-white/10 dark:border-t-cyan-700 dark:bg-white/5"
           v-reveal="100"
         >
           <form class="space-y-6" @submit.prevent="onSubmit" novalidate>
