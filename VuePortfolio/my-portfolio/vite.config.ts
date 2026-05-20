@@ -9,5 +9,13 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src')
     }
+  },
+  server: {
+    proxy: {
+      '/api/sendmail': {
+        target: 'https://portfolio-mail-sender-dycbe6acc7brhucr.chilecentral-01.azurewebsites.net',
+        changeOrigin: true,
+      }
+    }
   }
 })
