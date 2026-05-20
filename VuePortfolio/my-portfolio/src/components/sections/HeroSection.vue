@@ -131,7 +131,7 @@
                   class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5"
                 >
                   <dd
-                    class="text-2xl font-semibold text-slate-900 dark:text-slate-100"
+                    class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-400 dark:to-indigo-400"
                   >
                     +15
                   </dd>
@@ -143,7 +143,7 @@
                   class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5"
                 >
                   <dd
-                    class="text-2xl font-semibold text-slate-900 dark:text-slate-100"
+                    class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-400 dark:to-indigo-400"
                   >
                     +20
                   </dd>
@@ -155,7 +155,7 @@
                   class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5"
                 >
                   <dd
-                    class="text-2xl font-semibold text-slate-900 dark:text-slate-100"
+                    class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-400 dark:to-indigo-400"
                   >
                     +5
                   </dd>
@@ -243,6 +243,26 @@
         </dl>
       </div>
       <!-- /animated-div -->
+
+      <div
+        aria-hidden="true"
+        class="md:hidden absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none"
+        :style="scrollCueStyle"
+      >
+        <svg
+          class="w-8 h-8 text-slate-400 dark:text-slate-500 animate-bounce"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+        >
+          <path
+            d="M6 9l6 6 6-6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
     </div>
     <div
       aria-hidden="true"
@@ -335,6 +355,11 @@ const imageStyle = computed((): Record<string, string> => {
 
 const animStyle = computed(() => ({
   transform: `translateY(-${innerOffset.value}px)`,
+}));
+
+const scrollCueStyle = computed(() => ({
+  opacity: Math.max(0, 1 - scrollProg.value * 6),
+  transition: "opacity 200ms ease",
 }));
 
 function getCollapsedHeroHeight() {
