@@ -279,8 +279,8 @@ const modal = reactive({
   type: '' as '' | 'success' | 'error'
 })
 
-// Formspree endpoint
-const FORM_ENDPOINT = 'https://formspree.io/f/mnjoavzp'
+// Azure Function endpoint
+const FORM_ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT as string
 
 // email regex
 function validateEmail(email: string) {
