@@ -2,10 +2,7 @@
   <section
     ref="sectionRef"
     id="hero"
-    :class="[
-      backgrounds.hero,
-      'relative overflow-hidden flex flex-col md:h-auto md:flex md:items-center',
-    ]"
+    :class="[backgrounds.hero, 'relative overflow-hidden']"
     :style="heroSectionStyle"
   >
     <div aria-hidden="true" class="pointer-events-none absolute inset-0">
@@ -22,20 +19,31 @@
       class="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-indigo-400/20 blur-3xl animate-blob animation-delay-2000 dark:bg-indigo-500/20"
     ></div>
 
-    <!-- Sticky viewport: clips to 100dvh on mobile. Animated div translates up on scroll to reveal stats below the fold -->
+    <!-- ═══ MOBILE LAYOUT (sticky scroll reveal, unchanged behavior) ═══ -->
     <div
-      class="sticky top-0 h-[100dvh] overflow-hidden flex flex-col md:static md:h-auto md:overflow-visible"
+      class="md:hidden sticky top-0 h-[100dvh] overflow-hidden flex flex-col"
     >
       <div :style="animStyle" class="flex flex-col will-change-transform">
-        <div
-          class="relative flex flex-col w-full overflow-hidden md:overflow-visible md:flex-initial md:mx-auto md:max-w-7xl md:px-6 md:py-20"
-        >
-          <div
-            class="flex flex-col md:grid md:gap-12 md:grid-cols-2 md:items-center"
-          >
+        <div class="relative flex flex-col w-full overflow-hidden">
+          <div class="flex flex-col">
             <div
-              class="order-2 md:order-1 text-center md:text-left px-5 py-4 md:px-0 md:py-0"
+              :style="photoContainerStyle"
+              class="order-1 relative shrink-0 overflow-hidden"
             >
+              <div class="relative block w-full">
+                <img
+                  :src="mobilePhotoUrl"
+                  :alt="$t('hero.photoAlt')"
+                  :style="imageStyle"
+                  class="w-full object-top max-w-none opacity-60"
+                />
+                <div
+                  aria-hidden="true"
+                  class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white dark:from-slate-900 to-transparent pointer-events-none"
+                ></div>
+              </div>
+            </div>
+            <div class="order-2 text-center px-5 py-4">
               <div
                 class="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs border-slate-200 bg-slate-100 text-slate-600 dark:border-white/10 dark:bg-white/10 dark:text-slate-300"
               >
@@ -46,7 +54,7 @@
               </div>
 
               <h1
-                class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05] sm:leading-tight tracking-tight"
+                class="text-4xl sm:text-5xl font-extrabold leading-[1.05] sm:leading-tight tracking-tight"
               >
                 <span
                   class="mt-2 block text-slate-400 text-sm sm:text-lg font-semibold uppercase tracking-[0.2em] dark:text-slate-300"
@@ -54,13 +62,13 @@
                 >
                 <span class="block">
                   <span
-                    class="bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-300 dark:via-sky-400 dark:to-indigo-400"
+                    class="bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-500 bg-clip-text text-transparent"
                   >
                     {{ $t("hero.titleStrong") }}
                   </span>
                   <br class="sm:block" />
                   <span
-                    class="px-1 text-2xl sm:text-3xl md:text-4xl text-slate-900 dark:text-slate-100"
+                    class="px-1 text-2xl sm:text-3xl text-slate-900 dark:text-slate-100"
                   >
                     {{ $t("hero.titleRest") }}
                   </span>
@@ -68,7 +76,7 @@
               </h1>
 
               <p
-                class="mt-1 md:mt-4 mb-1 inline-block min-h-[2rem] px-1 py-0.5 rounded-lg bg-cyan-50/60 dark:bg-cyan-900/30 border border-cyan-100 dark:border-cyan-800 font-mono text-sm sm:text-base text-cyan-700 dark:text-cyan-200 tracking-wide transition-all duration-400 shadow"
+                class="mt-1 mb-1 inline-block min-h-[2rem] px-1 py-0.5 rounded-lg bg-cyan-50/60 dark:bg-cyan-900/30 border border-cyan-100 dark:border-cyan-800 font-mono text-sm text-cyan-700 dark:text-cyan-200 tracking-wide shadow"
               >
                 <span>{{ typedText }}</span
                 ><span
@@ -77,13 +85,13 @@
               </p>
 
               <p
-                class="mt-1 md:mt-3 text-sm md:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto md:mx-0 md:whitespace-pre-line"
+                class="mt-1 text-sm text-slate-600 dark:text-slate-300 max-w-xl mx-auto"
               >
                 {{ $t("hero.description") }}
               </p>
 
               <div
-                class="mt-2 md:mt-8 flex flex-wrap items-center justify-center md:justify-start gap-3"
+                class="mt-2 flex flex-wrap items-center justify-center gap-3"
               >
                 <a
                   href="#projects"
@@ -111,7 +119,7 @@
                 >
                   {{ $t("hero.ctaSecondary") }}
                   <svg
-                    class="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                    class="h-4 w-4"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     aria-hidden="true"
@@ -124,86 +132,12 @@
                   </svg>
                 </a>
               </div>
-              <dl
-                class="hidden md:grid mt-6 grid-cols-3 gap-4 max-w-md md:mx-0"
-              >
-                <div
-                  class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5"
-                >
-                  <dd
-                    class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-400 dark:to-indigo-400"
-                  >
-                    +15
-                  </dd>
-                  <dt class="mt-2 text-xs text-slate-400 dark:text-slate-300">
-                    {{ $t("hero.stats.years") }}
-                  </dt>
-                </div>
-                <div
-                  class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5"
-                >
-                  <dd
-                    class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-400 dark:to-indigo-400"
-                  >
-                    +20
-                  </dd>
-                  <dt class="mt-2 text-xs text-slate-400 dark:text-slate-300">
-                    {{ $t("hero.stats.projects") }}
-                  </dt>
-                </div>
-                <div
-                  class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5"
-                >
-                  <dd
-                    class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-400 dark:to-indigo-400"
-                  >
-                    +5
-                  </dd>
-                  <dt class="mt-2 text-xs text-slate-400 dark:text-slate-300">
-                    {{ $t("hero.stats.clients") }}
-                  </dt>
-                </div>
-              </dl>
-            </div>
-
-            <div
-              :style="photoContainerStyle"
-              class="order-1 md:order-2 relative md:h-auto shrink-0 md:shrink overflow-hidden md:overflow-visible md:mx-auto md:max-w-none"
-            >
-              <div class="relative block w-full md:inline-block">
-                <img
-                  :src="photoUrl"
-                  :alt="$t('hero.photoAlt')"
-                  :style="imageStyle"
-                  class="w-full object-top max-w-none md:max-w-md rounded-b-3xl md:rounded-3xl ring-0 md:ring-2 md:ring-slate-200 md:shadow-[0_10px_40px_-10px_rgba(56,189,248,0.35)] md:dark:ring-white/10 opacity-60 md:opacity-100"
-                />
-                <div
-                  aria-hidden="true"
-                  class="md:hidden absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white dark:from-slate-900 to-transparent pointer-events-none"
-                ></div>
-                <div
-                  aria-hidden="true"
-                  class="hidden md:block pointer-events-none absolute -inset-2 rounded-[1.75rem] bg-gradient-to-r from-cyan-400/20 via-indigo-400/20 to-fuchsia-400/20 blur-xl"
-                ></div>
-                <div
-                  class="hidden md:block absolute -bottom-4 -right-4 rounded-2xl border border-slate-200 bg-white/90 px-4 py-2 shadow-lg text-slate-700 backdrop-blur dark:border-white/10 dark:bg-white/10 dark:text-slate-100"
-                >
-                  <span class="inline-flex items-center gap-2 text-xs">
-                    <span
-                      class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"
-                    ></span>
-                    {{ $t("hero.availability") }}
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-        <!-- Mobile stats: initially below fold, revealed by scrolling within the hero -->
-        <dl
-          ref="statsRef"
-          class="md:hidden px-5 pt-3 pb-1 grid grid-cols-3 gap-1.5"
-        >
+
+        <!-- Mobile stats: below fold, revealed by scroll -->
+        <dl ref="statsRef" class="px-5 pt-3 pb-1 grid grid-cols-3 gap-1.5">
           <div
             class="rounded-xl border border-slate-200 bg-slate-50 px-2 py-1.5 text-center dark:border-white/10 dark:bg-white/5"
           >
@@ -242,11 +176,10 @@
           </div>
         </dl>
       </div>
-      <!-- /animated-div -->
 
       <div
         aria-hidden="true"
-        class="md:hidden absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none"
+        class="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none"
         :style="scrollCueStyle"
       >
         <svg
@@ -264,6 +197,351 @@
         </svg>
       </div>
     </div>
+    <!-- /MOBILE LAYOUT -->
+
+    <!-- ═══ DESKTOP LAYOUTS ═══
+         Cambiar desktopVariant en <script setup> para alternar:
+         'fullbleed' | 'card' | 'cinematic' | 'editorial' -->
+
+    <!-- ── fullbleed / card / cinematic: texto izquierda, imagen derecha/fondo ── -->
+    <div v-if="desktopVariant !== 'editorial'" :class="desktopOuterClass">
+      <!-- fullbleed: capas de imagen y gradiente de fondo -->
+      <template v-if="desktopVariant === 'fullbleed'">
+        <img
+          :src="desktopPhotoUrl"
+          :alt="$t('hero.photoAlt')"
+          class="absolute top-0 right-0 h-full w-[60%] object-cover object-center pointer-events-none select-none"
+        />
+        <div
+          aria-hidden="true"
+          class="absolute inset-y-0 left-0 w-[55%] bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none dark:from-slate-900 dark:via-slate-900/80"
+        ></div>
+        <div
+          aria-hidden="true"
+          class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none dark:from-slate-900"
+        ></div>
+      </template>
+
+      <!-- Columna izquierda: texto (compartida entre fullbleed, card y cinematic) -->
+      <div :class="desktopLeftColClass">
+        <div
+          class="inline-flex self-start items-center gap-2 rounded-full border px-3 py-1 text-xs border-slate-200 bg-slate-100 text-slate-600 dark:border-white/10 dark:bg-white/10 dark:text-slate-300"
+        >
+          <span
+            class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"
+          ></span>
+          {{ $t("hero.available") }}
+        </div>
+
+        <h1
+          class="mt-6 text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight"
+        >
+          <span
+            class="block text-slate-400 text-sm lg:text-base font-semibold uppercase tracking-[0.2em] dark:text-slate-300 mb-3"
+          >
+            {{ $t("hero.eyebrow") }}
+          </span>
+          <span
+            class="bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-300 dark:via-sky-400 dark:to-indigo-400"
+          >
+            {{ $t("hero.titleStrong") }}
+          </span>
+          <br />
+          <span
+            class="text-3xl lg:text-4xl xl:text-5xl text-slate-900 dark:text-slate-100"
+          >
+            {{ $t("hero.titleRest") }}
+          </span>
+        </h1>
+
+        <p
+          class="mt-4 inline-flex self-start min-h-[2rem] px-2 py-1 rounded-lg bg-cyan-50/60 dark:bg-cyan-900/30 border border-cyan-100 dark:border-cyan-800 font-mono text-sm lg:text-base text-cyan-700 dark:text-cyan-200 tracking-wide shadow"
+        >
+          <span>{{ typedText }}</span
+          ><span
+            class="border-r-2 border-cyan-400 dark:border-cyan-300 ml-1 animate-caret"
+          ></span>
+        </p>
+
+        <p
+          class="mt-4 text-base lg:text-lg text-slate-600 dark:text-slate-300 max-w-lg leading-relaxed"
+        >
+          {{ $t("hero.description") }}
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a
+            href="#projects"
+            @click.prevent="scrollToAnchor('projects')"
+            class="group inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-6 py-3 font-medium text-white hover:bg-cyan-400 transition-colors dark:bg-cyan-400 dark:text-slate-900 dark:hover:bg-cyan-300"
+          >
+            {{ $t("hero.ctaPrimary") }}
+            <svg
+              class="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+          <a
+            href="#contact"
+            @click.prevent="scrollToAnchor('contact')"
+            class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 font-medium text-slate-900 hover:bg-slate-50 transition-colors dark:border-white/15 dark:bg-white/10 dark:text-slate-100 dark:hover:bg-white/20"
+          >
+            {{ $t("hero.ctaSecondary") }}
+            <svg
+              class="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <dl class="mt-10 grid grid-cols-3 gap-4 max-w-md">
+          <div :class="desktopStatCardClass">
+            <dd
+              class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-400 dark:to-indigo-400"
+            >
+              +15
+            </dd>
+            <dt class="mt-2 text-xs text-slate-400 dark:text-slate-300">
+              {{ $t("hero.stats.years") }}
+            </dt>
+          </div>
+          <div :class="desktopStatCardClass">
+            <dd
+              class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-400 dark:to-indigo-400"
+            >
+              +20
+            </dd>
+            <dt class="mt-2 text-xs text-slate-400 dark:text-slate-300">
+              {{ $t("hero.stats.projects") }}
+            </dt>
+          </div>
+          <div :class="desktopStatCardClass">
+            <dd
+              class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-400 dark:to-indigo-400"
+            >
+              +5
+            </dd>
+            <dt class="mt-2 text-xs text-slate-400 dark:text-slate-300">
+              {{ $t("hero.stats.clients") }}
+            </dt>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Columna derecha: CARD -->
+      <div v-if="desktopVariant === 'card'" class="relative flex items-center">
+        <div
+          aria-hidden="true"
+          class="absolute -inset-4 rounded-3xl bg-gradient-to-br from-cyan-500/20 via-sky-400/10 to-indigo-500/20 blur-2xl dark:from-cyan-400/30 dark:via-sky-500/15 dark:to-indigo-400/30"
+        ></div>
+        <div
+          class="relative w-full overflow-hidden rounded-2xl lg:rounded-3xl ring-1 ring-slate-200 shadow-2xl dark:ring-white/10"
+        >
+          <img
+            :src="desktopPhotoUrl"
+            :alt="$t('hero.photoAlt')"
+            class="w-full aspect-video object-cover object-top block"
+          />
+          <div
+            class="absolute bottom-4 right-4 rounded-xl border border-slate-200 bg-white/90 px-3 py-1.5 shadow-lg backdrop-blur-sm dark:border-white/10 dark:bg-slate-900/70"
+          >
+            <span
+              class="inline-flex items-center gap-2 text-xs text-slate-700 dark:text-slate-100"
+            >
+              <span
+                class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"
+              ></span>
+              {{ $t("hero.availability") }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: CINEMATIC (imagen sangra al borde del viewport) -->
+      <div
+        v-else-if="desktopVariant === 'cinematic'"
+        class="relative overflow-hidden"
+      >
+        <img
+          :src="desktopPhotoUrl"
+          :alt="$t('hero.photoAlt')"
+          class="absolute inset-0 h-full w-full object-cover object-top"
+        />
+        <div
+          aria-hidden="true"
+          class="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-white dark:from-slate-900 to-transparent pointer-events-none"
+        ></div>
+        <div
+          aria-hidden="true"
+          class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/50 dark:from-slate-900/50 to-transparent pointer-events-none"
+        ></div>
+        <div
+          class="absolute bottom-8 right-8 rounded-2xl border border-slate-200 bg-white/90 px-4 py-2 shadow-lg backdrop-blur-sm dark:border-white/10 dark:bg-slate-900/70"
+        >
+          <span
+            class="inline-flex items-center gap-2 text-xs text-slate-700 dark:text-slate-100"
+          >
+            <span
+              class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"
+            ></span>
+            {{ $t("hero.availability") }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── editorial: texto centrado arriba + imagen panorámica abajo ── -->
+    <div v-else class="hidden md:block px-8 lg:px-16 xl:px-24 py-20">
+      <div class="text-center max-w-3xl mx-auto">
+        <div
+          class="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs border-slate-200 bg-slate-100 text-slate-600 dark:border-white/10 dark:bg-white/10 dark:text-slate-300"
+        >
+          <span
+            class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"
+          ></span>
+          {{ $t("hero.available") }}
+        </div>
+
+        <h1
+          class="mt-6 text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight"
+        >
+          <span
+            class="block text-slate-400 text-sm lg:text-base font-semibold uppercase tracking-[0.2em] dark:text-slate-300 mb-3"
+          >
+            {{ $t("hero.eyebrow") }}
+          </span>
+          <span
+            class="bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-500 bg-clip-text text-transparent dark:from-cyan-300 dark:via-sky-400 dark:to-indigo-400"
+          >
+            {{ $t("hero.titleStrong") }}
+          </span>
+          <br />
+          <span
+            class="text-3xl lg:text-4xl xl:text-5xl text-slate-900 dark:text-slate-100"
+          >
+            {{ $t("hero.titleRest") }}
+          </span>
+        </h1>
+
+        <p
+          class="mt-4 inline-block min-h-[2rem] px-2 py-1 rounded-lg bg-cyan-50/60 dark:bg-cyan-900/30 border border-cyan-100 dark:border-cyan-800 font-mono text-sm lg:text-base text-cyan-700 dark:text-cyan-200 tracking-wide shadow"
+        >
+          <span>{{ typedText }}</span
+          ><span
+            class="border-r-2 border-cyan-400 dark:border-cyan-300 ml-1 animate-caret"
+          ></span>
+        </p>
+
+        <p
+          class="mt-4 text-base lg:text-lg text-slate-600 dark:text-slate-300 max-w-xl mx-auto leading-relaxed"
+        >
+          {{ $t("hero.description") }}
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="#projects"
+            @click.prevent="scrollToAnchor('projects')"
+            class="group inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-6 py-3 font-medium text-white hover:bg-cyan-400 transition-colors dark:bg-cyan-400 dark:text-slate-900 dark:hover:bg-cyan-300"
+          >
+            {{ $t("hero.ctaPrimary") }}
+            <svg
+              class="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+          <a
+            href="#contact"
+            @click.prevent="scrollToAnchor('contact')"
+            class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 font-medium text-slate-900 hover:bg-slate-50 transition-colors dark:border-white/15 dark:bg-white/10 dark:text-slate-100 dark:hover:bg-white/20"
+          >
+            {{ $t("hero.ctaSecondary") }}
+            <svg
+              class="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Imagen panorámica con stats superpuestos -->
+      <div
+        class="mt-12 relative overflow-hidden rounded-2xl lg:rounded-3xl ring-1 ring-slate-200 shadow-2xl dark:ring-white/10"
+      >
+        <img
+          :src="desktopPhotoUrl"
+          :alt="$t('hero.photoAlt')"
+          class="w-full aspect-video object-cover object-top block"
+        />
+        <div
+          class="absolute inset-x-0 bottom-0 px-8 py-6 flex items-end justify-between bg-gradient-to-t from-black/70 to-transparent"
+        >
+          <dl class="flex gap-8">
+            <div class="text-center">
+              <dd class="text-2xl font-bold text-white">+15</dd>
+              <dt class="text-xs text-white/70">
+                {{ $t("hero.stats.years") }}
+              </dt>
+            </div>
+            <div class="text-center">
+              <dd class="text-2xl font-bold text-white">+20</dd>
+              <dt class="text-xs text-white/70">
+                {{ $t("hero.stats.projects") }}
+              </dt>
+            </div>
+            <div class="text-center">
+              <dd class="text-2xl font-bold text-white">+5</dd>
+              <dt class="text-xs text-white/70">
+                {{ $t("hero.stats.clients") }}
+              </dt>
+            </div>
+          </dl>
+          <div
+            class="rounded-xl border border-white/20 bg-white/10 px-3 py-1.5 backdrop-blur-sm"
+          >
+            <span class="inline-flex items-center gap-2 text-xs text-white">
+              <span
+                class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"
+              ></span>
+              {{ $t("hero.availability") }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /DESKTOP LAYOUTS -->
     <div
       aria-hidden="true"
       class="pointer-events-none absolute inset-0 opacity-[0.03] mix-blend-soft-light bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>')]"
@@ -276,7 +554,6 @@ import { ref, computed, onMounted, onBeforeUnmount, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { useSectionBackground } from "@/composables/useSectionBackground";
 
-const photoUrl = new URL("@/assets/Lucio.JPG", import.meta.url).href;
 const { backgrounds } = useSectionBackground();
 
 const sectionRef = ref<HTMLElement | null>(null);
@@ -284,7 +561,55 @@ const statsRef = ref<HTMLElement | null>(null);
 const innerOffset = ref(0);
 const scrollProg = ref(0);
 const isMobile = ref(false);
+const isDark = ref(false);
+
+// ─── DESKTOP LAYOUT VARIANT ──────────────────────────────────────────────────
+// Cambiar para alternar entre diseños: 'fullbleed' | 'card' | 'cinematic' | 'editorial'
+const desktopVariant = ref<"fullbleed" | "card" | "cinematic" | "editorial">(
+  "fullbleed",
+);
+
+const desktopOuterClass = computed(() => {
+  switch (desktopVariant.value) {
+    case "card":
+      return "hidden md:grid md:grid-cols-[55fr_45fr] md:min-h-screen md:items-center gap-8 lg:gap-16 px-8 lg:px-16 xl:px-20 py-24";
+    case "cinematic":
+      return "hidden md:grid md:grid-cols-2 md:min-h-screen";
+    default:
+      return "hidden md:block relative overflow-hidden min-h-screen";
+  }
+});
+
+const desktopLeftColClass = computed(() => {
+  switch (desktopVariant.value) {
+    case "card":
+      return "flex flex-col justify-center";
+    case "cinematic":
+      return "flex flex-col justify-center px-8 lg:px-16 xl:px-24 py-24 relative z-10";
+    default:
+      return "relative z-10 flex flex-col justify-center min-h-screen max-w-[50%] px-8 lg:px-16 xl:px-24 py-24";
+  }
+});
+
+const desktopStatCardClass = computed(() =>
+  desktopVariant.value === "fullbleed"
+    ? "rounded-xl border border-slate-200 bg-white/80 p-4 text-center backdrop-blur-sm dark:border-white/10 dark:bg-slate-900/60"
+    : "rounded-xl border border-slate-200 bg-slate-50 p-4 text-center dark:border-white/10 dark:bg-white/5",
+);
+
 const statsHeight = ref(0);
+
+const mobilePhotoUrl = computed(() =>
+  isDark.value
+    ? new URL("@/assets/Lucio1-1Dark.png", import.meta.url).href
+    : new URL("@/assets/Lucio1-1Light.png", import.meta.url).href,
+);
+
+const desktopPhotoUrl = computed(() =>
+  isDark.value
+    ? new URL("@/assets/Lucio16-9Dark.png", import.meta.url).href
+    : new URL("@/assets/Lucio16-9Light.png", import.meta.url).href,
+);
 const photoStartPx = ref(0);
 const photoEndPx = ref(0);
 
@@ -298,6 +623,7 @@ const DESKTOP_ANCHOR_EXTRA_OFFSET = 16;
 
 let resizeObserver: ResizeObserver | undefined;
 let debouncedResizeHandler: ((...a: any[]) => void) | undefined;
+let themeObserver: MutationObserver | undefined;
 
 const getViewportHeight = () => window.innerHeight;
 const clamp = (value: number, min: number, max: number) =>
@@ -482,6 +808,14 @@ function debounce<T extends (...a: any[]) => void>(fn: T, wait = 150) {
 }
 
 onMounted(() => {
+  isDark.value = document.documentElement.classList.contains("dark");
+  themeObserver = new MutationObserver(() => {
+    isDark.value = document.documentElement.classList.contains("dark");
+  });
+  themeObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
   startTyping();
   updateMobile();
   measureStats();
@@ -504,6 +838,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   stopTyping();
+  themeObserver?.disconnect();
   window.removeEventListener("scroll", handleScroll);
   if (debouncedResizeHandler) {
     window.removeEventListener("resize", debouncedResizeHandler);
