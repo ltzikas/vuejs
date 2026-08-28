@@ -175,7 +175,7 @@
                   :src="photoUrl"
                   :alt="$t('hero.photoAlt')"
                   :style="imageStyle"
-                  class="w-full object-top max-w-none md:max-w-md rounded-b-3xl md:rounded-3xl ring-0 md:ring-2 md:ring-slate-200 md:shadow-[0_10px_40px_-10px_rgba(56,189,248,0.35)] md:dark:ring-white/10 opacity-60 md:opacity-100"
+                  class="w-full object-top max-w-none md:max-w-lg rounded-b-3xl md:rounded-3xl ring-0 md:ring-2 md:ring-slate-200 md:shadow-[0_10px_40px_-10px_rgba(56,189,248,0.35)] md:dark:ring-white/10 opacity-60 md:opacity-100"
                 />
                 <div
                   aria-hidden="true"
@@ -276,7 +276,7 @@ import { ref, computed, onMounted, onBeforeUnmount, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { useSectionBackground } from "@/composables/useSectionBackground";
 
-const photoUrl = new URL("@/assets/Lucio.JPG", import.meta.url).href;
+const photoUrl = new URL("@/assets/Lucio.png", import.meta.url).href;
 const { backgrounds } = useSectionBackground();
 
 const sectionRef = ref<HTMLElement | null>(null);
